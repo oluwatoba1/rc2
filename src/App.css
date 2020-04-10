@@ -37,7 +37,7 @@ p {
 }
 
 .logoHeader {
-	padding: var(--padding);
+	padding: 0 var(--padding);
 	position: relative;
 	display: flex;
 	align-items: center;
