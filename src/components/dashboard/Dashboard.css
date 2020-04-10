@@ -1,0 +1,200 @@
+.right h3 {
+	color: var(--primary-color);
+}
+
+.information {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 10px;
+	padding: 20px 0;
+}
+
+.savingsCard,
+.investCard,
+.dollarCard,
+.nairaCard {
+	display: flex;
+	height: 100px;
+	border-radius: 7px 7px 0 0;
+	background: linear-gradient(90deg, #9ebd13 0%, #008552 100%);
+	align-items: center;
+	color: #fff;
+	padding: var(--padding);
+	font-size: 12px;
+	box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.6);
+}
+
+.cardBody {
+	width: 120px;
+}
+
+.information i {
+	font-size: 30px;
+	margin-right: 20px;
+}
+
+.information,
+.supersaver p {
+	font-size: 14px;
+	font-weight: 600;
+	color: #fff;
+}
+
+.information h3 {
+	font-size: 20px;
+	color: #fff;
+}
+
+.naira {
+	font-weight: 600;
+}
+
+.todoWrapper {
+	display: grid;
+	grid-template-columns: 65% 33%;
+	gap: 2%;
+}
+
+.todoWrapper h4 {
+	text-transform: uppercase;
+	color: rgba(0, 0, 0, 0.6);
+}
+
+.todoBody {
+	display: grid;
+	grid-template-rows: repeat(1, 1fr);
+	row-gap: 20px;
+}
+
+.todoBody div {
+	border: 1px solid rgba(0, 0, 0, 0.4);
+	padding: 20px;
+	border-radius: 5px 5px 0 0;
+}
+
+.supersaver {
+	display: flex;
+	flex-direction: column;
+}
+
+.ssChallenge {
+	color: #fff;
+}
+
+.superCard {
+	background-color: #008552;
+	padding: 20px;
+	border-radius: 5px 5px 0 0;
+	display: flex;
+}
+
+.supersaver p {
+	padding: 5px;
+	text-transform: capitalize;
+}
+
+.joinButton {
+	background-color: #fff;
+	color: #000;
+	cursor: pointer;
+	text-decoration: none;
+	padding: 5px;
+	border-radius: 5px;
+	font-size: 12px;
+}
+
+.download {
+	display: flex;
+	flex-direction: column;
+	color: #fff;
+}
+
+.downloadBody {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 10px;
+}
+
+.downloadCard {
+	display: flex;
+	border-radius: 5px;
+}
+
+.downloadCard img {
+	margin-right: 10px;
+	height: 40px;
+}
+
+@media (max-width: 640px) {
+	.information {
+		grid-template-columns: repeat(1, 1fr);
+		padding: 10px;
+	}
+
+	.savingsCard,
+	.investCard,
+	.dollarCard,
+	.nairaCard {
+		height: 60px;
+		border-radius: 5px 5px 0 0;
+		padding: 10px;
+		font-size: 10px;
+	}
+
+	.cardBody {
+		width: 80px;
+	}
+
+	.information i {
+		font-size: 20px;
+		margin-right: 10px;
+	}
+
+	.information,
+	.supersaver p {
+		font-size: 12px;
+	}
+
+	.information h3 {
+		font-size: 16px;
+	}
+
+	.todoWrapper {
+		grid-template-columns: repeat(1, 1fr);
+		gap: 20px;
+	}
+
+	.todoBody {
+		row-gap: 10px;
+	}
+
+	.todoBody div {
+		padding: 10px;
+		border-radius: 3px 3px 0 0;
+	}
+
+	.superCard {
+		padding: var(--mediaPad);
+		border-radius: 4px 4px 0 0;
+	}
+
+	.joinButton {
+		border-radius: 4px;
+		font-size: 10px;
+	}
+
+	.downloadBody {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 5px;
+	}
+
+	.downloadCard {
+		border-radius: 4px;
+	}
+
+	.downloadCard img {
+		margin-right: 5px;
+		height: 25px;
+	}
+}

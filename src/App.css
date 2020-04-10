@@ -1,0 +1,133 @@
+:root {
+	--primary-color: #0ea851;
+	--padding: 20px;
+	--mediaPad: 10px;
+}
+
+.rc-container {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	background-color: #fff;
+	display: flex;
+}
+
+a {
+	text-decoration: none;
+}
+
+h3,
+p {
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	color: rgba(0, 0, 0, 0.5);
+	font-size: 14px;
+}
+
+.sidebar {
+	position: relative;
+	background: #fff;
+	box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.6);
+	display: block;
+	z-index: 2;
+	width: 350px;
+}
+
+.logoHeader {
+	padding: var(--padding);
+	position: relative;
+}
+
+.logoHeader a {
+	color: #000;
+	font-size: 14px;
+	font-weight: 600;
+	padding: 0 10px;
+	display: flex;
+	align-items: center;
+}
+
+.logoHeader img {
+	height: 30px;
+}
+
+.links {
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	padding-inline-start: 0;
+	justify-content: space-around;
+}
+
+.links li {
+	padding: var(--padding);
+}
+
+.logout {
+	position: absolute;
+	bottom: 0;
+}
+
+.links li a {
+	color: #000;
+	text-decoration: none;
+	font-size: 16px;
+	text-transform: capitalize;
+	font-weight: 600;
+	transition: linear 0.6s;
+}
+
+.links li a:hover {
+	color: var(--primary-color);
+}
+
+.links > li > a.active {
+	color: var(--primary-color);
+}
+
+.links li a i {
+	height: 30px;
+	margin-right: 10px;
+}
+
+.right {
+	padding: 10px 20px;
+	width: 100%;
+}
+
+@media (max-width: 640px) {
+	p {
+		font-size: 10px;
+	}
+
+	.sidebar {
+		width: 300px;
+	}
+
+	.logoHeader {
+		padding: var(--mediaPad);
+	}
+
+	.logoHeader a {
+		font-size: 10px;
+	}
+
+	.logoHeader img {
+		height: 20px;
+	}
+
+	.links li {
+		padding: var(--mediaPad);
+	}
+
+	.links li a {
+		font-size: 14px;
+	}
+
+	.links li a i {
+		height: 20px;
+	}
+}
