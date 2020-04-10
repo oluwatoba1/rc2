@@ -16,44 +16,44 @@ const Sidebar = () => {
 			</div>
 
 			<ul className="links">
-				<li>
-					<NavLink to="/" activeClassName="active">
+				<NavLink to="/">
+					<li>
 						<i className="fa fa-home" />
 						Home
-					</NavLink>
-				</li>
-				<li>
-					<NavLink to="/savings" activeClassName="active">
+					</li>
+				</NavLink>
+				<NavLink to="/savings" activeClassName="active">
+					<li>
 						<i className="fa fa-piggy-bank" />
 						Savings
-					</NavLink>
-				</li>
-				<li>
-					<NavLink to="/invest" activeClassName="active">
+					</li>
+				</NavLink>
+				<NavLink to="/invest" activeClassName="active">
+					<li>
 						<i className="fa fa-rocket" />
 						Invest
-					</NavLink>
-				</li>
-				<li>
-					<NavLink to="/account" activeClassName="active">
+					</li>
+				</NavLink>
+				<NavLink to="/account" activeClassName="active">
+					<li>
 						<i className="fa fa-user-circle" />
 						Account
-					</NavLink>
-				</li>
-				<li>
-					<NavLink to="/faqs" activeClassName="active">
+					</li>
+				</NavLink>
+				<NavLink to="/faqs" activeClassName="active">
+					<li>
 						<i className="fa fa-question-circle" />
 						FAQs
-					</NavLink>
-				</li>
+					</li>
+				</NavLink>
 
 				{/* TODO : link likely to change */}
-				<li className="logout">
-					<a href="/logout">
+				<a href="/logout">
+					<li className="logout">
 						<i className="fa fa-power-off" />
 						Logout
-					</a>
-				</li>
+					</li>
+				</a>
 			</ul>
 		</div>
 	);

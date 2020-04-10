@@ -66,6 +66,7 @@ p {
 
 .links li {
 	padding: var(--padding);
+	color: #000;
 }
 
 .logout {
@@ -73,24 +74,24 @@ p {
 	bottom: 0;
 }
 
-.links li a {
+.links li {
 	color: #000;
 	text-decoration: none;
 	font-size: 16px;
 	text-transform: capitalize;
 	font-weight: 600;
-	transition: linear 0.6s;
+	transition: ease-in-out 0.2s;
 }
 
-.links li a:hover {
-	color: var(--primary-color);
+.links li:hover {
+	background-color: var(--primary-color);
 }
 
-.links > li > a.active {
-	color: var(--primary-color);
+a.active {
+	background-color: var(--primary-color);
 }
 
-.links li a i {
+.links li i {
 	height: 30px;
 	margin-right: 10px;
 }
@@ -128,9 +129,10 @@ p {
 
 	.links li a {
 		font-size: 14px;
+		display: none;
 	}
 
-	.links li a i {
+	.links li i {
 		height: 20px;
 	}
 
