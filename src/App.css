@@ -39,19 +39,21 @@ p {
 .logoHeader {
 	padding: var(--padding);
 	position: relative;
+	display: flex;
+	align-items: center;
 }
 
 .logoHeader a {
 	color: #000;
 	font-size: 14px;
 	font-weight: 600;
-	padding: 0 10px;
+	padding: 10px;
 	display: flex;
 	align-items: center;
 }
 
 .logoHeader img {
-	height: 30px;
+	height: 20px;
 }
 
 .links {
