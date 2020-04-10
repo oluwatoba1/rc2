@@ -91,7 +91,7 @@ a.active {
 	background-color: var(--primary-color);
 }
 
-.links li i {
+.links i {
 	height: 30px;
 	margin-right: 10px;
 }
@@ -127,17 +127,11 @@ a.active {
 		padding: var(--mediaPad);
 	}
 
-	.links li a {
+	.links li {
 		font-size: 14px;
-		display: none;
 	}
 
-	.links li i {
+	.links i {
 		height: 20px;
 	}
-
-	/* .right {
-		padding: 10px 20px;
-		width: calc(100% - 300px);
-	} */
 }
