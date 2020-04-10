@@ -127,7 +127,8 @@
 
 @media (max-width: 640px) {
 	.information {
-		grid-template-columns: repeat(1, 1fr);
+		grid-template-columns: repeat(4, 1fr);
+		overflow-x: scroll;
 		padding: 10px;
 	}
 
