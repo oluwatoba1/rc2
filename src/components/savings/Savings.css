@@ -1,6 +1,6 @@
 .savingsContainer {
 	display: grid;
-	grid-template-columns: 45% 55%;
+	grid-template-columns: 40% 60%;
 	gap: var(--padding);
 	padding: var(--padding) 0;
 }
@@ -9,6 +9,7 @@
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 20px;
+	padding: var(--padding);
 }
 
 .savingsBody a {
