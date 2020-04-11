@@ -1,8 +1,8 @@
 .savingsContainer {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 20px;
-	padding: 20px 0;
+	grid-template-columns: 45% 55%;
+	gap: var(--padding);
+	padding: var(--padding) 0;
 }
 
 .savingsBody {
@@ -12,10 +12,10 @@
 }
 
 .savingsBody a {
-	font-size: 18px;
-	padding: 20px;
+	font-size: 16px;
+	padding: var(--padding);
 	color: #000;
-	height: 80px;
+	height: 60px;
 	text-transform: capitalize;
 	border-radius: 7px;
 	display: flex;
