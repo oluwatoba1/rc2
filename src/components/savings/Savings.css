@@ -3,12 +3,13 @@
 	grid-template-columns: 40% 60%;
 	gap: var(--padding);
 	padding: var(--padding) 0;
+	width: 100%;
 }
 
 .savingsBody {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	gap: 20px;
+	gap: var(--padding);
 	padding: var(--padding);
 }
 
@@ -34,4 +35,21 @@
 }
 
 .savingsFormBody {
+}
+
+@media (max-width: 640px) {
+	.savingsContainer {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.savingsBody {
+		grid-template-columns: repeat(5, 1fr);
+		padding: 10px;
+		overflow-x: scroll;
+	}
+
+	.savingsBody a {
+		font-size: 10px;
+		height: 40px;
+	}
 }
