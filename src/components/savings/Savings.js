@@ -35,10 +35,6 @@ const Savings = () => {
 						<i className="" />
 						December savings
 					</NavLink>
-					<NavLink activeClassName="active" to="/savings/july-savings">
-						<i className="" />
-						July savings
-					</NavLink>
 					<NavLink activeClassName="active" to="/savings/view-transactions">
 						<i className="" />
 						View transactions

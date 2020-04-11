@@ -1,6 +1,6 @@
 :root {
 	--primary-color: #0ea851;
-	--padding: 20px;
+	--padding: 15px;
 	--mediaPad: 10px;
 }
 
@@ -28,12 +28,13 @@ p {
 }
 
 .sidebar {
-	position: relative;
+	position: fixed;
 	background: #fff;
 	box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.6);
 	display: block;
 	z-index: 2;
-	width: 350px;
+	height: 100vh;
+	width: 300px;
 }
 
 .logoHeader {
@@ -64,9 +65,22 @@ p {
 	justify-content: space-around;
 }
 
-.links li {
+.links a {
 	padding: var(--padding);
 	color: #000;
+	color: #000;
+	text-decoration: none;
+	font-size: 16px;
+	text-transform: capitalize;
+	font-weight: 600;
+	transition: ease-in-out 0.2s;
+	display: flex;
+	align-items: center;
+}
+
+.links li ul {
+	list-style-type: none;
+	display: none;
 }
 
 .logout {
@@ -74,17 +88,20 @@ p {
 	bottom: 0;
 }
 
-.links li {
-	color: #000;
-	text-decoration: none;
-	font-size: 16px;
-	text-transform: capitalize;
-	font-weight: 600;
-	transition: ease-in-out 0.2s;
+#accountList li {
+	font-size: 15px;
 }
 
-.links li:hover {
+.links a:hover,
+#accountList li:hover {
 	background-color: var(--primary-color);
+}
+
+.links li:nth-child(4) a {
+	color: #000;
+}
+.links li:nth-child(4) a:hover {
+	background-color: #fff;
 }
 
 a.active {
@@ -92,23 +109,22 @@ a.active {
 }
 
 .links i {
+	display: flex;
+	align-items: center;
 	height: 30px;
 	margin-right: 10px;
 }
 
 .right {
+	position: absolute;
+	left: 300px;
 	padding: 10px 20px;
-	width: 100%;
-	overflow-x: scroll;
+	width: calc(100%-300px);
 }
 
 @media (max-width: 640px) {
 	p {
 		font-size: 10px;
-	}
-
-	.sidebar {
-		width: 300px;
 	}
 
 	.logoHeader {
@@ -123,11 +139,8 @@ a.active {
 		height: 20px;
 	}
 
-	.links li {
+	.links a {
 		padding: var(--mediaPad);
-	}
-
-	.links li {
 		font-size: 14px;
 	}
 

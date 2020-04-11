@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import rclogo from '../img/rclogo.png';
 
-const toggleBar = () => {};
-
 const Sidebar = () => {
+	const [show, setShow] = useState(false);
+
+	useEffect(() => {
+		if (show === true) {
+			document.getElementById('accountList').style.display = 'block';
+		} else {
+			document.getElementById('accountList').style.display = 'none';
+		}
+	}, [show]);
+
+	const toggleBar = () => {};
+
 	return (
 		<div className="sidebar">
 			<div className="logoHeader">
@@ -16,47 +26,55 @@ const Sidebar = () => {
 			</div>
 
 			<ul className="links">
-				<NavLink to="/">
-					<li>
-						<i className="fa fa-home" />
-						Home
-					</li>
+				<NavLink to="/dashboard">
+					<i className="fa fa-home" />
+					<li>Home</li>
 				</NavLink>
 				<NavLink to="/savings" activeClassName="active">
-					<li>
-						<i className="fa fa-piggy-bank" />
-						Savings
-					</li>
+					<i className="fa fa-piggy-bank" />
+					<li>Savings</li>
 				</NavLink>
 				<NavLink to="/invest" activeClassName="active">
-					<li>
-						<i className="fa fa-rocket" />
-						Invest
-					</li>
+					<i className="fa fa-rocket" />
+					<li>Invest</li>
 				</NavLink>
-				<NavLink to="/account" activeClassName="active">
-					<li>
+				<li>
+					<a onClick={() => setShow(!show)} href="#!">
 						<i className="fa fa-user-circle" />
 						Account
-					</li>
-				</NavLink>
+					</a>
+					<ul id="accountList">
+						<NavLink to="/account/profile" activeClassName="active">
+							<li>Profile</li>
+						</NavLink>
+						<NavLink to="/account/contact-info" activeClassName="active">
+							<li>Contact Info</li>
+						</NavLink>
+						<NavLink to="/account/financials" activeClassName="active">
+							<li>Financials</li>
+						</NavLink>
+						<NavLink to="/account/security" activeClassName="active">
+							<li>Password Security</li>
+						</NavLink>
+					</ul>
+				</li>
 				<NavLink to="/faqs" activeClassName="active">
-					<li>
-						<i className="fa fa-question-circle" />
-						FAQs
-					</li>
+					<i className="fa fa-question-circle" />
+					<li>FAQs</li>
 				</NavLink>
 
 				{/* TODO : link likely to change */}
-				<a href="/logout">
-					<li className="logout">
-						<i className="fa fa-power-off" />
-						Logout
-					</li>
+				<a href="/logout" className="logout">
+					<i className="fa fa-power-off" />
+					<li>Logout</li>
 				</a>
 			</ul>
 		</div>
 	);
 };
+
+// Sidebar.propTypes = {
+// 	show: PropTypes.Object.isRequired,
+// };
 
 export default Sidebar;

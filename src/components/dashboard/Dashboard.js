@@ -1,7 +1,5 @@
 import React, { Fragment } from 'react';
 import './Dashboard.css';
-import playstore from '../../img/playstore.svg';
-import appstore from '../../img/appstore.svg';
 
 const Dashboard = () => {
 	return (
@@ -58,31 +56,6 @@ const Dashboard = () => {
 						</div>
 						<div>
 							<p>Add Card Details</p>
-						</div>
-					</div>
-				</div>
-				<div className="supersaver">
-					<div className="ssChallenge">
-						<h4>Super saver challenge</h4>
-						<div className="superCard">
-							<div className="cardBody">
-								<p>Join the super savers of 2020</p>
-								<a className="joinButton" href="/">
-									Join now
-								</a>
-							</div>
-							<img src="" alt="super" />
-						</div>
-					</div>
-					<div className="download">
-						<h4>Download the Mobile App</h4>
-						<div className="downloadBody">
-							<div className="downloadCard">
-								<img src={appstore} alt="apple" />
-							</div>
-							<div className="downloadCard">
-								<img src={playstore} alt="playstore" />
-							</div>
 						</div>
 					</div>
 				</div>
