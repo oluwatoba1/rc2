@@ -21,11 +21,8 @@
 	color: #fff;
 	padding: var(--padding);
 	font-size: 12px;
+	width: 180px;
 	box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.6);
-}
-
-.cardBody {
-	width: 120px;
 }
 
 .information i {
@@ -33,9 +30,8 @@
 	margin-right: 20px;
 }
 
-.information,
-.supersaver p {
-	font-size: 14px;
+.information p {
+	font-size: 12px;
 	font-weight: 600;
 	color: #fff;
 }
@@ -73,27 +69,6 @@
 	border-radius: 5px 5px 0 0;
 }
 
-.supersaver {
-	display: flex;
-	flex-direction: column;
-}
-
-.ssChallenge {
-	color: #fff;
-}
-
-.superCard {
-	background-color: #008552;
-	padding: 20px;
-	border-radius: 5px 5px 0 0;
-	display: flex;
-}
-
-.supersaver p {
-	padding: 5px;
-	text-transform: capitalize;
-}
-
 .joinButton {
 	background-color: #fff;
 	color: #000;
@@ -128,8 +103,8 @@
 
 @media (max-width: 640px) {
 	.information {
-		grid-template-columns: repeat(1, 1fr);
-		padding: 10px;
+		grid-template-columns: repeat(2, 1fr);
+		padding: 5px;
 	}
 
 	.savingsCard,
@@ -137,27 +112,23 @@
 	.dollarCard,
 	.nairaCard {
 		height: 60px;
+		width: 90px;
 		border-radius: 5px 5px 0 0;
 		padding: 10px;
 		font-size: 10px;
 	}
 
-	.cardBody {
-		width: 80px;
-	}
-
 	.information i {
-		font-size: 20px;
-		margin-right: 10px;
+		font-size: 15px;
+		margin-right: 5px;
 	}
 
-	.information,
-	.supersaver p {
-		font-size: 12px;
+	.information p {
+		font-size: 10px;
 	}
 
 	.information h3 {
-		font-size: 16px;
+		font-size: 12px;
 	}
 
 	.todoWrapper {
