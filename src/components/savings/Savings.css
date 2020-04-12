@@ -1,7 +1,7 @@
-h3 {
+.savingsContainer h3 {
 	width: 100vw;
 }
-.savingsContainer {
+.savingsWrapper {
 	display: grid;
 	grid-template-columns: 30% 75%;
 	column-gap: var(--padding);
@@ -35,7 +35,7 @@ h3 {
 }
 
 @media (max-width: 640px) {
-	.savingsContainer {
+	.savingsWrapper {
 		grid-template-columns: repeat(1, 1fr);
 	}
 
