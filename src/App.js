@@ -11,6 +11,11 @@ import Security from './components/account/Security';
 import Investment from './components/investment/Investment';
 import Savings from './components/savings/Savings';
 import FAQ from './components/faqs/FAQ';
+import ViewTransactions from './components/savings/ViewTransactions';
+import SendMoney from './components/savings/SendMoney';
+import DecemberSavings from './components/savings/DecemberSavings';
+import RequestWithdrawal from './components/savings/RequestWithdrawal';
+import AddSavings from './components/savings/AddSavings';
 
 const App = () => {
 	return (
@@ -23,6 +28,17 @@ const App = () => {
 						<Route exact path="/" component={Dashboard} />
 						<Route path="/dashboard" component={Dashboard} />
 						<Route path="/savings" component={Savings} />
+						<Route path="/savings/add" component={AddSavings} />
+						<Route path="/savings/request" component={RequestWithdrawal} />
+						<Route
+							path="/savings/december-savings"
+							component={DecemberSavings}
+						/>
+						<Route path="/savings/send" component={SendMoney} />
+						<Route
+							path="/savings/view-transactions"
+							component={ViewTransactions}
+						/>
 						<Route path="/invest" component={Investment} />
 						<Route path="/account/profile" component={Profile} />
 						<Route path="/account/contact-info" component={ContactInfo} />
