@@ -16,7 +16,7 @@ import ViewTransactions from './ViewTransactions';
 const Savings = () => {
 	return (
 		<Router>
-			<div className=".savingsContainer">
+			<div className="savingsContainer">
 				<h3>Savings</h3>
 				<div className="savingsWrapper">
 					<div className="savingsBody">
