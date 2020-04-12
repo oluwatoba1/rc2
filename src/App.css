@@ -41,6 +41,7 @@ p {
 	position: relative;
 	display: flex;
 	align-items: center;
+	height: 40px;
 }
 
 .logoHeader a {
@@ -49,13 +50,17 @@ p {
 	font-weight: 600;
 	padding: 0 var(--padding);
 	display: flex;
-	flex-direction: row;
+	width: 180px;
 	align-content: center;
+}
+
+.logoHeader a::after {
+	content: 'Royal Cooperative';
 }
 
 .logoHeader img {
 	height: 30px;
-	margin-right: 10px;
+	margin-right: var(--padding);
 }
 
 .links {
@@ -136,11 +141,16 @@ a.active {
 	}
 
 	.logoHeader a {
-		font-size: 10px;
+		width: 60px;
+	}
+
+	.logoHeader a::after {
+		content: 'RC';
 	}
 
 	.logoHeader img {
-		height: 20px;
+		height: 25px;
+		margin-right: var(--mediaPad);
 	}
 
 	.links a {
@@ -153,7 +163,7 @@ a.active {
 	}
 
 	.links ul {
-		padding-left: 10px;
+		padding-left: var(--mediaPad);
 	}
 
 	.right {

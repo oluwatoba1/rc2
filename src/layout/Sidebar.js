@@ -34,7 +34,6 @@ const Sidebar = () => {
 				<i onClick={() => setShowBar(!showBar)} className="fa fa-bars" />
 				<a id="logo" href="/">
 					<img src={rclogo} alt="logo" />
-					Royal Co-operative
 				</a>
 			</div>
 
