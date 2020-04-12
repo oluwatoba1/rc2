@@ -3,23 +3,36 @@ import { NavLink } from 'react-router-dom';
 import rclogo from '../img/rclogo.png';
 
 const Sidebar = () => {
-	const [show, setShow] = useState(false);
+	const [showList, setShowList] = useState(false);
+	const [showBar, setShowBar] = useState(true);
 
 	useEffect(() => {
-		if (show === true) {
+		if (showList === true) {
 			document.getElementById('accountList').style.display = 'block';
 		} else {
 			document.getElementById('accountList').style.display = 'none';
 		}
-	}, [show]);
 
-	const toggleBar = () => {};
+		if (showBar === false) {
+			document.getElementById('logo').style.display = 'none';
+			let links = document.getElementsByClassName('sideLinks');
+			for (let i = 0; i < links.length; i++) {
+				links[i].style.display = 'none';
+			}
+		} else {
+			document.getElementById('logo').style.display = 'block';
+			let links = document.getElementsByClassName('sideLinks');
+			for (let i = 0; i < links.length; i++) {
+				links[i].style.display = 'block';
+			}
+		}
+	}, [showList, showBar]);
 
 	return (
-		<div className="sidebar">
+		<div id="sidebar" className="sidebar">
 			<div className="logoHeader">
-				<i onClick={toggleBar} className="fa fa-bars" />
-				<a href="/">
+				<i onClick={() => setShowBar(!showBar)} className="fa fa-bars" />
+				<a id="logo" href="/">
 					<img src={rclogo} alt="logo" />
 					Royal Co-operative
 				</a>
@@ -28,45 +41,43 @@ const Sidebar = () => {
 			<ul className="links">
 				<NavLink to="/dashboard">
 					<i className="fa fa-home" />
-					<li>Home</li>
+					<li className="sideLinks">Home</li>
 				</NavLink>
 				<NavLink to="/savings" activeClassName="active">
 					<i className="fa fa-piggy-bank" />
-					<li>Savings</li>
+					<li className="sideLinks">Savings</li>
 				</NavLink>
 				<NavLink to="/invest" activeClassName="active">
 					<i className="fa fa-rocket" />
-					<li>Invest</li>
+					<li className="sideLinks">Invest</li>
 				</NavLink>
-				<li>
-					<a onClick={() => setShow(!show)} href="#!">
-						<i className="fa fa-user-circle" />
-						Account
-					</a>
-					<ul id="accountList">
-						<NavLink to="/account/profile" activeClassName="active">
-							<li>Profile</li>
-						</NavLink>
-						<NavLink to="/account/contact-info" activeClassName="active">
-							<li>Contact Info</li>
-						</NavLink>
-						<NavLink to="/account/financials" activeClassName="active">
-							<li>Financials</li>
-						</NavLink>
-						<NavLink to="/account/security" activeClassName="active">
-							<li>Password Security</li>
-						</NavLink>
-					</ul>
-				</li>
+				<a onClick={() => setShowList(!showList)} href="#!">
+					<i className="fa fa-user-circle" />
+					<li className="sideLinks">Account</li>
+				</a>
+				<ul id="accountList">
+					<NavLink to="/account/profile" activeClassName="active">
+						<li>Profile</li>
+					</NavLink>
+					<NavLink to="/account/contact-info" activeClassName="active">
+						<li>Contact Info</li>
+					</NavLink>
+					<NavLink to="/account/financials" activeClassName="active">
+						<li>Financials</li>
+					</NavLink>
+					<NavLink to="/account/security" activeClassName="active">
+						<li>Password Security</li>
+					</NavLink>
+				</ul>
 				<NavLink to="/faqs" activeClassName="active">
 					<i className="fa fa-question-circle" />
-					<li>FAQs</li>
+					<li className="sideLinks">FAQs</li>
 				</NavLink>
 
 				{/* TODO : link likely to change */}
 				<a href="/logout" className="logout">
 					<i className="fa fa-power-off" />
-					<li>Logout</li>
+					<li className="sideLinks">Logout</li>
 				</a>
 			</ul>
 		</div>

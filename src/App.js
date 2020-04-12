@@ -18,7 +18,7 @@ const App = () => {
 			<div className="rc-container">
 				<Sidebar />
 
-				<div className="right">
+				<div id="right" className="right">
 					<Switch>
 						<Route exact path="/" component={Dashboard} />
 						<Route path="/dashboard" component={Dashboard} />

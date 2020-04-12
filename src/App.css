@@ -5,7 +5,7 @@
 }
 
 .rc-container {
-	position: relative;
+	position: fixed;
 	height: 100%;
 	width: 100%;
 	background-color: #fff;
@@ -28,7 +28,7 @@ p {
 }
 
 .sidebar {
-	position: fixed;
+	position: relative;
 	background: #fff;
 	box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.6);
 	display: block;
@@ -37,7 +37,7 @@ p {
 }
 
 .logoHeader {
-	padding: 0 var(--padding);
+	padding: var(--padding);
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -45,15 +45,17 @@ p {
 
 .logoHeader a {
 	color: #000;
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: 600;
-	padding: 10px;
+	padding: 0 var(--padding);
 	display: flex;
-	align-items: center;
+	flex-direction: row;
+	align-content: center;
 }
 
 .logoHeader img {
-	height: 20px;
+	height: 30px;
+	margin-right: 10px;
 }
 
 .links {
@@ -77,11 +79,9 @@ p {
 	align-items: center;
 }
 
-.links li ul {
+.links ul {
 	list-style-type: none;
 	display: none;
-	padding-inline-start: 0;
-	padding-left: var(--padding);
 }
 
 .logout {
@@ -96,6 +96,10 @@ p {
 .links a:hover,
 #accountList a:hover {
 	background-color: var(--primary-color);
+}
+
+.links a:nth-child(4):hover {
+	background-color: #fff;
 }
 
 .links li:nth-child(4) a {
@@ -117,8 +121,8 @@ a.active {
 }
 
 .right {
-	position: absolute;
-	left: 146px;
+	/* position: absolute;
+	left: 251px; */
 	padding: 10px 20px;
 }
 
@@ -148,7 +152,12 @@ a.active {
 		height: 20px;
 	}
 
-	.links li ul {
+	.links ul {
 		padding-left: 10px;
+	}
+
+	.right {
+		left: 166px;
+		width: 220px;
 	}
 }
