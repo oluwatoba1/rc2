@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './Savings.css';
 import {
 	Switch,
@@ -16,7 +16,7 @@ import ViewTransactions from './ViewTransactions';
 const Savings = () => {
 	return (
 		<Router>
-			<div className="savingsContainer">
+			<Fragment>
 				<h3>Savings</h3>
 				<div className="savingsWrapper">
 					<div className="savingsBody">
@@ -58,7 +58,7 @@ const Savings = () => {
 						</Switch>
 					</div>
 				</div>
-			</div>
+			</Fragment>
 		</Router>
 	);
 };

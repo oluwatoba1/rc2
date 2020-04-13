@@ -1,6 +1,3 @@
-.savingsContainer h3 {
-	width: 100vw;
-}
 .savingsWrapper {
 	display: grid;
 	grid-template-columns: 30% 75%;
