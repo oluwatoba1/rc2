@@ -56,15 +56,19 @@ const Sidebar = () => {
 				</a>
 				<ul id="accountList">
 					<NavLink to="/account/profile" activeClassName="active">
+						<i className="fa fa-id-badge" />
 						<li>Profile</li>
 					</NavLink>
 					<NavLink to="/account/contact-info" activeClassName="active">
+						<i className="fa fa-id-card" />
 						<li>Contact Info</li>
 					</NavLink>
 					<NavLink to="/account/financials" activeClassName="active">
+						<i className="fa fa-coins" />
 						<li>Financials</li>
 					</NavLink>
 					<NavLink to="/account/security" activeClassName="active">
+						<i className="fa fa-shield-alt" />
 						<li>Password Security</li>
 					</NavLink>
 				</ul>

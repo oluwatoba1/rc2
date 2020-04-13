@@ -128,7 +128,7 @@ a.active {
 .right {
 	/* position: absolute;
 	left: 251px; */
-	padding: 10px 20px;
+	padding: 10px 15px;
 	width: 100%;
 	overflow-y: auto;
 }
@@ -144,11 +144,11 @@ a.active {
 
 	.logoHeader a {
 		font-size: 12px;
-		width: 80px;
+		width: 100px;
 	}
 
 	.logoHeader a::after {
-		content: 'RC';
+		content: 'RoyalCo-op';
 	}
 
 	.logoHeader img {

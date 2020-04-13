@@ -46,7 +46,7 @@ const Dashboard = () => {
 							<p>Verify your email address</p>
 						</div>
 						<div>
-							<p>Turn on your Royal co-operative Autosave</p>
+							<p>Turn on your Royal co-op Autosave</p>
 						</div>
 						<div>
 							<p>Safelock &#x20A6;50,678 FOR 61 - 90 days</p>

@@ -6,7 +6,7 @@
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-gap: 10px;
-	padding: 20px 0;
+	padding: 15px 0;
 }
 
 .savingsCard,
@@ -15,12 +15,12 @@
 .nairaCard {
 	display: flex;
 	height: 100px;
-	border-radius: 7px 7px 0 0;
+	border-radius: 7px;
 	background: linear-gradient(90deg, #9ebd13 0%, #008552 100%);
 	align-items: center;
 	color: #fff;
 	padding: var(--padding);
-	font-size: 12px;
+	font-size: 14px;
 	box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.6);
 }
 
@@ -62,7 +62,7 @@
 .todoBody div {
 	border: 1px solid rgba(0, 0, 0, 0.4);
 	padding: 20px;
-	border-radius: 5px 5px 0 0;
+	border-radius: 10px;
 }
 
 @media (max-width: 640px) {
@@ -76,7 +76,7 @@
 	.dollarCard,
 	.nairaCard {
 		height: 60px;
-		border-radius: 5px 5px 0 0;
+		border-radius: 6px;
 		padding: 10px;
 		font-size: 10px;
 	}
@@ -91,7 +91,7 @@
 	}
 
 	.information h3 {
-		font-size: 12px;
+		font-size: 10px;
 	}
 
 	.todoWrapper {
@@ -104,6 +104,7 @@
 
 	.todoBody div {
 		padding: 10px;
-		border-radius: 3px 3px 0 0;
+		border-radius: 8px;
+		font-size: 10px;
 	}
 }
