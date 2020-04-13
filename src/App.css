@@ -114,7 +114,7 @@ p {
 	background-color: #fff;
 }
 
-a.active {
+.links a.active {
 	background-color: var(--primary-color);
 }
 
