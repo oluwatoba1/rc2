@@ -20,7 +20,7 @@ const Sidebar = () => {
 				links[i].style.display = 'none';
 			}
 		} else {
-			document.getElementById('logo').style.display = 'block';
+			document.getElementById('logo').style.display = 'flex';
 			let links = document.getElementsByClassName('sideLinks');
 			for (let i = 0; i < links.length; i++) {
 				links[i].style.display = 'block';
