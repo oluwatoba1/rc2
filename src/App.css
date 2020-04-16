@@ -268,13 +268,41 @@ p {
 	}
 
 	.rightHeader {
+		position: relative;
 		height: 40px;
 		padding: 0 10px;
+		width: 100%;
 	}
 
 	.rightHeader input[type='search'] {
 		font-size: 12px;
 		padding: 25px;
 		background-position: center left 5px;
+	}
+
+	.accountProfile {
+		width: 80px;
+	}
+
+	#caption h4 {
+		font-size: 8px;
+	}
+
+	#caption p {
+		font-size: 6px;
+	}
+
+	.accountProfile img {
+		height: 20px;
+	}
+
+	.others {
+		width: 30px;
+	}
+
+	.notifications,
+	.logout {
+		width: 10px;
+		height: 10px;
 	}
 }
