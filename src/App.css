@@ -169,14 +169,8 @@ p {
 		font-size: 10px;
 	}
 
-	.sidebar {
-		width: 40px;
-	}
-
 	.logoHeader {
 		padding: var(--mediaPad);
-		height: 40px;
-		width: 40px;
 	}
 
 	.logoHeader a {
