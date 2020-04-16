@@ -169,6 +169,64 @@ p {
 	background-position: center left 10px;
 }
 
+.accountHeader {
+	display: flex;
+	justify-content: space-between;
+}
+
+.accountProfile {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 100px;
+}
+
+#caption h4 {
+	font-size: 10px;
+}
+
+#caption p {
+	font-size: 8px;
+}
+
+#caption > h4,
+p {
+	margin: 0;
+}
+
+.accountProfile img {
+	height: 30px;
+}
+
+.accountProfile i {
+	color: #c9ced6;
+}
+
+.others {
+	display: flex;
+	width: 60px;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.notifications,
+.logout {
+	width: 15px;
+	height: 15px;
+}
+
+.notifications {
+	background: url('./img/bell.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.logout {
+	background: url('./img/logout.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
 @media (max-width: 640px) {
 	p {
 		font-size: 10px;

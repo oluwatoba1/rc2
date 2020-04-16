@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 import Sidebar from './layout/Sidebar';
-import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
+import {Switch, Route, BrowserRouter as Router} from 'react-router-dom';
 import Dashboard from './components/dashboard/Dashboard';
 import Profile from './components/account/Profile';
 import ContactInfo from './components/account/ContactInfo';
@@ -17,6 +17,8 @@ import DecemberSavings from './components/savings/DecemberSavings';
 import RequestWithdrawal from './components/savings/RequestWithdrawal';
 import AddSavings from './components/savings/AddSavings';
 
+import user from './img/avatar.png';
+
 const App = () => {
 	return (
 		<Router>
@@ -25,14 +27,27 @@ const App = () => {
 				<div id="right" className="right">
 					<div className="rightHeader">
 						<input type="search" placeholder="Search" />
-						<div className="accountHeader"></div>{' '}
-					</div>{' '}
+						<div className="accountHeader">
+							<div className="accountProfile">
+								<div id="caption">
+									<h4>John Doe</h4>
+									<p>Member</p>
+								</div>
+								<img src={user} alt="user" />
+								<i className="fa fa-angle-down" />
+							</div>
+							<div className="others">
+								<div className="notifications"></div>
+								<div className="logout"></div>
+							</div>
+						</div>
+					</div>
 					<Switch>
-						<Route exact path="/" component={Dashboard} />{' '}
-						<Route path="/dashboard" component={Dashboard} />{' '}
-						<Route path="/savings" component={Savings} />{' '}
-						<Route path="/savings/add" component={AddSavings} />{' '}
-						<Route path="/savings/request" component={RequestWithdrawal} />{' '}
+						<Route exact path="/" component={Dashboard} />
+						<Route path="/dashboard" component={Dashboard} />
+						<Route path="/savings" component={Savings} />
+						<Route path="/savings/add" component={AddSavings} />
+						<Route path="/savings/request" component={RequestWithdrawal} />
 						<Route
 							path="/savings/december-savings"
 							component={DecemberSavings}
