@@ -22,32 +22,35 @@ const App = () => {
 		<Router>
 			<div className="rc-container">
 				<Sidebar />
-
 				<div id="right" className="right">
+					<div className="rightHeader">
+						<input type="search" placeholder="Search" />
+						<div className="accountHeader"></div>{' '}
+					</div>{' '}
 					<Switch>
-						<Route exact path="/" component={Dashboard} />
-						<Route path="/dashboard" component={Dashboard} />
-						<Route path="/savings" component={Savings} />
-						<Route path="/savings/add" component={AddSavings} />
-						<Route path="/savings/request" component={RequestWithdrawal} />
+						<Route exact path="/" component={Dashboard} />{' '}
+						<Route path="/dashboard" component={Dashboard} />{' '}
+						<Route path="/savings" component={Savings} />{' '}
+						<Route path="/savings/add" component={AddSavings} />{' '}
+						<Route path="/savings/request" component={RequestWithdrawal} />{' '}
 						<Route
 							path="/savings/december-savings"
 							component={DecemberSavings}
-						/>
-						<Route path="/savings/send" component={SendMoney} />
+						/>{' '}
+						<Route path="/savings/send" component={SendMoney} />{' '}
 						<Route
 							path="/savings/view-transactions"
 							component={ViewTransactions}
-						/>
-						<Route path="/invest" component={Investment} />
-						<Route path="/account/profile" component={Profile} />
-						<Route path="/account/contact-info" component={ContactInfo} />
-						<Route path="/account/financials" component={Financials} />
-						<Route path="/account/security" component={Security} />
-						<Route path="/faqs" component={FAQ} />
-					</Switch>
-				</div>
-			</div>
+						/>{' '}
+						<Route path="/invest" component={Investment} />{' '}
+						<Route path="/account/profile" component={Profile} />{' '}
+						<Route path="/account/contact-info" component={ContactInfo} />{' '}
+						<Route path="/account/financials" component={Financials} />{' '}
+						<Route path="/account/security" component={Security} />{' '}
+						<Route path="/faqs" component={FAQ} />{' '}
+					</Switch>{' '}
+				</div>{' '}
+			</div>{' '}
 		</Router>
 	);
 };

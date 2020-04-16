@@ -4,8 +4,10 @@ import './Dashboard.css';
 const Dashboard = () => {
 	return (
 		<Fragment>
-			<h3>Emmanuel,</h3>
-			<p>Hello, wash your hands</p>
+			<div className="dash-header">
+				<h3>Dashboard</h3>
+				<button>+ Add New Contribution</button>
+			</div>
 
 			<div className="information">
 				<div className="savingsCard">

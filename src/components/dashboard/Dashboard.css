@@ -1,12 +1,27 @@
 .right h3 {
-	color: var(--primary-color);
+	color: #000;
+}
+
+.dash-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 15px;
+}
+
+.dash-header button {
+	background-color: #6f52ed;
+	padding: 10px;
+	color: #fff;
+	font-size: 12px;
+	border-radius: 5px;
 }
 
 .information {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-gap: 10px;
-	padding: 15px 0;
+	padding: 15px;
 }
 
 .savingsCard,
@@ -14,30 +29,56 @@
 .dollarCard,
 .nairaCard {
 	display: flex;
-	height: 100px;
+	height: 150px;
 	border-radius: 7px;
-	background: linear-gradient(90deg, #9ebd13 0%, #008552 100%);
+	background: #ffffff;
 	align-items: center;
-	color: #fff;
+	color: #000;
 	padding: var(--padding);
 	font-size: 14px;
-	box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.6);
+	border-radius: 10px;
+	/* box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.6); */
+}
+
+.savingsCard i {
+	background: rgba(113, 59, 219, 0.05);
+	color: #6f52ed;
+}
+
+.investCard i {
+	background: rgba(51, 214, 159, 0.07);
+	color: #21b8c7;
+}
+
+.dollarCard i {
+	background: rgba(255, 76, 97, 0.05);
+	color: #ff4c61;
+}
+
+.nairaCard i {
+	background: rgba(76, 184, 255, 0.07);
+	color: #4cb8ff;
 }
 
 .information i {
 	font-size: 30px;
 	margin-right: 20px;
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .information p {
-	font-size: 12px;
-	font-weight: 600;
-	color: #fff;
+	font-size: 14px;
+	color: #000;
 }
 
 .information h3 {
-	font-size: 20px;
-	color: #fff;
+	font-size: 26px;
+	color: #000;
 }
 
 .naira {
@@ -66,11 +107,19 @@
 }
 
 @media (max-width: 640px) {
+	.dash-header h3 {
+		font-size: 18px;
+	}
+
+	.dash-header button {
+		padding: 5px;
+		font-size: 8px;
+	}
+
 	.information {
 		grid-template-columns: repeat(2, 1fr);
 		padding: 5px;
 	}
-
 	.savingsCard,
 	.investCard,
 	.dollarCard,
@@ -80,28 +129,24 @@
 		padding: 10px;
 		font-size: 10px;
 	}
-
 	.information i {
 		font-size: 15px;
 		margin-right: 5px;
+		height: 30px;
+		width: 30px;
 	}
-
 	.information p {
 		font-size: 10px;
 	}
-
 	.information h3 {
-		font-size: 10px;
+		font-size: 12px;
 	}
-
 	.todoWrapper {
 		padding: 10px;
 	}
-
 	.todoBody {
 		row-gap: 10px;
 	}
-
 	.todoBody div {
 		padding: 10px;
 		border-radius: 8px;

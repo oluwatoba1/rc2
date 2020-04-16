@@ -1,60 +1,61 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-import rclogo from '../img/rclogo.png';
+// import rclogo from '../img/rclogo.png';
 
 const Sidebar = () => {
-	const [showList, setShowList] = useState(false);
-	const [showBar, setShowBar] = useState(true);
+	// const [showList, setShowList] = useState(false);
+	// const [showBar, setShowBar] = useState(true);
 
-	useEffect(() => {
-		if (showList === true) {
-			document.getElementById('accountList').style.display = 'block';
-		} else {
-			document.getElementById('accountList').style.display = 'none';
-		}
+	// useEffect(() => {
+	// 	if (showList === true) {
+	// 		document.getElementById('accountList').style.display = 'block';
+	// 	} else {
+	// 		document.getElementById('accountList').style.display = 'none';
+	// 	}
 
-		if (showBar === false) {
-			document.getElementById('logo').style.display = 'none';
-			let links = document.getElementsByClassName('sideLinks');
-			for (let i = 0; i < links.length; i++) {
-				links[i].style.display = 'none';
-			}
-		} else {
-			document.getElementById('logo').style.display = 'flex';
-			let links = document.getElementsByClassName('sideLinks');
-			for (let i = 0; i < links.length; i++) {
-				links[i].style.display = 'block';
-			}
-		}
-	}, [showList, showBar]);
+	// 	if (showBar === false) {
+	// 		document.getElementById('logo').style.display = 'none';
+	// 		let links = document.getElementsByClassName('sideLinks');
+	// 		for (let i = 0; i < links.length; i++) {
+	// 			links[i].style.display = 'none';
+	// 		}
+	// 	} else {
+	// 		document.getElementById('logo').style.display = 'flex';
+	// 		let links = document.getElementsByClassName('sideLinks');
+	// 		for (let i = 0; i < links.length; i++) {
+	// 			links[i].style.display = 'block';
+	// 		}
+	// 	}
+	// }, [showList, showBar]);
 
 	return (
 		<div id="sidebar" className="sidebar">
 			<div className="logoHeader">
-				<i onClick={() => setShowBar(!showBar)} className="fa fa-bars" />
+				{/* <i onClick={() => setShowBar(!showBar)} className="fa fa-bars" /> */}
 				<a id="logo" href="/">
-					<img src={rclogo} alt="logo" />
+					{/* <img src={rclogo} alt="logo" /> */}
+					RC
 				</a>
 			</div>
 
 			<ul className="links">
 				<NavLink to="/dashboard">
 					<i className="fa fa-home" />
-					<li className="sideLinks">Home</li>
+					{/* <li className="sideLinks">Home</li> */}
 				</NavLink>
 				<NavLink to="/savings" activeClassName="active">
 					<i className="fa fa-piggy-bank" />
-					<li className="sideLinks">Savings</li>
+					{/* <li className="sideLinks">Savings</li> */}
 				</NavLink>
 				<NavLink to="/invest" activeClassName="active">
 					<i className="fa fa-rocket" />
-					<li className="sideLinks">Invest</li>
+					{/* <li className="sideLinks">Invest</li> */}
 				</NavLink>
-				<a onClick={() => setShowList(!showList)} href="#!">
+				<NavLink to="/account" activeClassName="active">
 					<i className="fa fa-user-circle" />
-					<li className="sideLinks">Account</li>
-				</a>
-				<ul id="accountList">
+					{/* <li className="sideLinks">Account</li> */}
+				</NavLink>
+				{/* <ul id="accountList">
 					<NavLink to="/account/profile" activeClassName="active">
 						<i className="fa fa-id-badge" />
 						<li className="sideLinks">Profile</li>
@@ -71,17 +72,17 @@ const Sidebar = () => {
 						<i className="fa fa-shield-alt" />
 						<li className="sideLinks">Password Security</li>
 					</NavLink>
-				</ul>
-				<NavLink to="/faqs" activeClassName="active">
+				</ul> */}
+				{/* <NavLink to="/faqs" activeClassName="active">
 					<i className="fa fa-question-circle" />
 					<li className="sideLinks">FAQs</li>
-				</NavLink>
+				</NavLink> */}
 
 				{/* TODO : link likely to change */}
-				<a href="/logout" className="logout">
-					<i className="fa fa-power-off" />
-					<li className="sideLinks">Logout</li>
-				</a>
+				<NavLink to="/settings" className="settings">
+					<i className="fa fa-cogs" />
+					{/* <li className="sideLinks">Logout</li> */}
+				</NavLink>
 			</ul>
 		</div>
 	);

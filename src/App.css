@@ -4,14 +4,6 @@
 	--mediaPad: 10px;
 }
 
-.rc-container {
-	position: fixed;
-	height: 100%;
-	width: 100%;
-	background-color: #fff;
-	display: flex;
-}
-
 a {
 	text-decoration: none;
 }
@@ -27,110 +19,149 @@ p {
 	font-size: 14px;
 }
 
+.rc-container {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background-color: #fff;
+	display: flex;
+	color: #000000;
+}
+
 .sidebar {
 	position: relative;
-	background: #fff;
-	box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.6);
-	display: block;
+	background: #373b53;
 	z-index: 2;
+	width: 60px;
 	height: 100%;
 }
 
 .logoHeader {
-	padding: var(--padding);
-	position: relative;
 	display: flex;
 	align-items: center;
-	height: 40px;
+	justify-content: center;
+	height: 60px;
+	width: 60px;
+	background-color: #6f52ed;
 }
 
 .logoHeader a {
-	color: #000;
-	font-size: 15px;
+	color: #fff;
+	font-size: 20px;
 	font-weight: 600;
-	padding: 0 var(--padding);
-	display: flex;
-	width: 180px;
-	align-items: center;
+	text-align: center;
 }
 
-.logoHeader a::after {
+/* .logoHeader a::after {
 	content: 'Royal Cooperative';
-}
+} */
 
-.logoHeader img {
+/* .logoHeader img {
 	height: 30px;
 	margin-right: var(--padding);
-}
+} */
 
 .links {
 	list-style-type: none;
 	display: flex;
 	flex-direction: column;
 	padding-inline-start: 0;
+	align-items: center;
 	justify-content: space-around;
 }
 
 .links a {
-	padding: var(--padding);
-	color: #000;
-	color: #000;
+	width: 40px;
+	height: 40px;
+	margin-bottom: 15px;
+	/* color: rgba(150, 156, 186, 0.2); */
+	color: #969cba;
 	text-decoration: none;
-	font-size: 16px;
+	font-size: 14px;
 	text-transform: capitalize;
 	font-weight: 600;
 	transition: ease-in-out 0.2s;
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	transition: cubic-bezier(0.3, 0.5, 0.3, 1);
 }
 
-.links ul {
+/* .links ul {
 	list-style-type: none;
 	display: none;
-}
+} */
 
-.logout {
+.settings {
 	position: absolute;
 	bottom: 0;
 }
 
-#accountList li {
+/* #accountList li {
 	font-size: 14px;
+} */
+
+.links a:hover
+/* #accountList a:hover*/ {
+	background: #ffffff;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+	border-radius: 10px;
 }
 
-.links a:hover,
-#accountList a:hover {
-	background-color: var(--primary-color);
+.links a:hover > i {
+	/* color: rgba(113, 59, 219, 0.2); */
+	color: #713bdb;
+	/* border: 2px solid #713bdb; */
 }
 
-.links a:nth-child(4):hover {
+/* .links a:nth-child(4):hover {
 	background-color: #fff;
-}
+} */
 
-.links li:nth-child(4) a {
+/* .links li:nth-child(4) a {
 	color: #000;
 }
 .links li:nth-child(4) a:hover {
 	background-color: #fff;
-}
+} */
 
 .links a.active {
-	background-color: var(--primary-color);
+	background-color: #ffffff;
+	border-radius: 10px;
+}
+
+.links a.active > i {
+	color: #713bdb;
+	/* border: 2px solid #713bdb; */
 }
 
 .links i {
 	display: flex;
 	align-items: center;
 	height: 30px;
-	margin-right: 10px;
+	color: #969cba;
+	/* margin-right: 10px; */
 }
 
 .right {
-	/* position: absolute;
-	left: 251px; */
-	padding: 10px 15px;
 	width: 100%;
 	overflow-y: auto;
+	background-color: #dfe1eb;
+}
+
+.rightHeader {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 60px;
+	background-color: #ffffff;
+}
+
+.rightHeader input[type='search'] {
+	outline: 0;
+	border: 0;
+	padding: 10px;
+	font-size: 12px;
 }
 
 @media (max-width: 640px) {
@@ -140,16 +171,18 @@ p {
 
 	.logoHeader {
 		padding: var(--mediaPad);
+		height: 40px;
+		width: 40px;
 	}
 
 	.logoHeader a {
-		font-size: 12px;
+		font-size: 18px;
 		width: 100px;
 	}
 
-	.logoHeader a::after {
+	/* .logoHeader a::after {
 		content: 'RoyalCo-op';
-	}
+	} */
 
 	.logoHeader img {
 		height: 25px;
@@ -157,7 +190,6 @@ p {
 	}
 
 	.links a {
-		padding: var(--mediaPad);
 		font-size: 14px;
 	}
 
@@ -173,7 +205,7 @@ p {
 		font-size: 12px;
 	}
 
-	.right {
-		left: 166px;
+	.rightHeader {
+		height: 40px;
 	}
 }

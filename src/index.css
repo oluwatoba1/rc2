@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
 
 body {
 	margin: 0;
-	font-family: 'Overpass', sans-serif;
+	font-family: 'DM Sans', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-color: #fff;
+	background-color: #dfe1eb;
 }
 
 code {
@@ -14,5 +14,5 @@ code {
 }
 
 * {
-	box-sizing: content-box;
+	box-sizing: border-box;
 }
