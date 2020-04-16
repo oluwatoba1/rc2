@@ -155,13 +155,18 @@ p {
 	justify-content: space-between;
 	height: 60px;
 	background-color: #ffffff;
+	padding: 0 15px;
 }
 
 .rightHeader input[type='search'] {
+	position: relative;
 	outline: 0;
 	border: 0;
-	padding: 10px;
-	font-size: 12px;
+	padding: 30px;
+	font-size: 14px;
+	background: url('./img/search.png');
+	background-repeat: no-repeat;
+	background-position: center left 10px;
 }
 
 @media (max-width: 640px) {
@@ -205,5 +210,12 @@ p {
 
 	.rightHeader {
 		height: 40px;
+		padding: 0 10px;
+	}
+
+	.rightHeader input[type='search'] {
+		font-size: 12px;
+		padding: 25px;
+		background-position: center left 5px;
 	}
 }
