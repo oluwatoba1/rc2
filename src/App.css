@@ -176,6 +176,7 @@ p {
 
 	.logoHeader {
 		padding: var(--mediaPad);
+		height: 40px;
 	}
 
 	.logoHeader a {
