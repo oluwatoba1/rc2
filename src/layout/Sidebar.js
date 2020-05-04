@@ -1,8 +1,8 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-// import rclogo from '../img/rclogo.png';
+import {NavLink} from 'react-router-dom';
+import rclogo from '../img/rc-copy.png';
 
-const Sidebar = () => {
+const Sidebar = ({showText}) => {
 	// const [showList, setShowList] = useState(false);
 	// const [showBar, setShowBar] = useState(true);
 
@@ -29,31 +29,30 @@ const Sidebar = () => {
 	// }, [showList, showBar]);
 
 	return (
-		<div id="sidebar" className="sidebar">
-			<div className="logoHeader">
+		<div id="sidebar">
+			<div id="logoHeader">
 				{/* <i onClick={() => setShowBar(!showBar)} className="fa fa-bars" /> */}
 				<a id="logo" href="/">
-					{/* <img src={rclogo} alt="logo" /> */}
-					RC
+					<img src={rclogo} alt="logo" />
 				</a>
 			</div>
 
 			<ul className="links">
 				<NavLink to="/dashboard">
 					<i className="fa fa-home" />
-					{/* <li className="sideLinks">Home</li> */}
+					{showText ? 'Home' : ''}
 				</NavLink>
 				<NavLink to="/savings" activeClassName="active">
 					<i className="fa fa-piggy-bank" />
-					{/* <li className="sideLinks">Savings</li> */}
+					{showText ? 'Savings' : ''}
 				</NavLink>
 				<NavLink to="/invest" activeClassName="active">
 					<i className="fa fa-rocket" />
-					{/* <li className="sideLinks">Invest</li> */}
+					{showText ? 'Invest' : ''}
 				</NavLink>
 				<NavLink to="/account" activeClassName="active">
 					<i className="fa fa-user-circle" />
-					{/* <li className="sideLinks">Account</li> */}
+					{showText ? 'Account' : ''}
 				</NavLink>
 				{/* <ul id="accountList">
 					<NavLink to="/account/profile" activeClassName="active">
@@ -81,15 +80,11 @@ const Sidebar = () => {
 				{/* TODO : link likely to change */}
 				<NavLink to="/settings" className="settings">
 					<i className="fa fa-cogs" />
-					{/* <li className="sideLinks">Logout</li> */}
+					{showText ? 'Settings' : ''}
 				</NavLink>
 			</ul>
 		</div>
 	);
 };
-
-// Sidebar.propTypes = {
-// 	show: PropTypes.Object.isRequired,
-// };
 
 export default Sidebar;

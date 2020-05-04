@@ -1,11 +1,14 @@
 :root {
 	--primary-color: #0ea851;
-	--padding: 15px;
+	--padding: 20px;
 	--mediaPad: 10px;
 }
 
 a {
+	display: flex;
 	text-decoration: none;
+	align-items: center;
+	justify-content: center;
 }
 
 h3,
@@ -28,28 +31,41 @@ p {
 	color: #000000;
 }
 
-.sidebar {
+.header {
+	position: relative;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#sidebar {
 	position: relative;
 	background: #373b53;
 	z-index: 2;
 	width: 60px;
 	height: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
-.logoHeader {
+#logoHeader {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	height: 60px;
 	width: 60px;
-	background-color: #6f52ed;
+	background-color: var(--primary-color);
 }
 
-.logoHeader a {
+#logoHeader a {
 	color: #fff;
-	font-size: 20px;
-	font-weight: 600;
+	font-size: 14px;
 	text-align: center;
+}
+
+#logo img {
+	height: 40px;
 }
 
 /* .logoHeader a::after {
@@ -66,12 +82,16 @@ p {
 	display: flex;
 	flex-direction: column;
 	padding-inline-start: 0;
+	padding: 0 var(--mediaPad);
 	align-items: center;
-	justify-content: space-around;
+	justify-content: center;
 }
 
 .links a {
-	width: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 100%;
 	height: 40px;
 	margin-bottom: 15px;
 	/* color: rgba(150, 156, 186, 0.2); */
@@ -80,11 +100,11 @@ p {
 	font-size: 14px;
 	text-transform: capitalize;
 	font-weight: 600;
-	transition: ease-in-out 0.2s;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	transition: cubic-bezier(0.3, 0.5, 0.3, 1);
+}
+
+.links a:nth-child(5) {
+	border-top: 1px solid #494e67;
 }
 
 /* .links ul {
@@ -101,17 +121,23 @@ p {
 	font-size: 14px;
 } */
 
-.links a:hover
-/* #accountList a:hover*/ {
-	background: #ffffff;
-	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
-	border-radius: 10px;
+.links a:hover {
+	color: #fff;
+}
+
+.links i {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px;
+	color: #969cba;
 }
 
 .links a:hover > i {
-	/* color: rgba(113, 59, 219, 0.2); */
-	color: #713bdb;
-	/* border: 2px solid #713bdb; */
+	background: #ffffff;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+	border-radius: 50%;
+	color: var(--primary-color);
 }
 
 /* .links a:nth-child(4):hover {
@@ -126,21 +152,17 @@ p {
 } */
 
 .links a.active {
-	background-color: #ffffff;
-	border-radius: 10px;
+	color: #fff;
 }
 
 .links a.active > i {
-	color: #713bdb;
-	/* border: 2px solid #713bdb; */
+	background-color: #ffffff;
+	border-radius: 50%;
 }
 
-.links i {
-	display: flex;
-	align-items: center;
-	height: 30px;
-	color: #969cba;
-	/* margin-right: 10px; */
+.links a.active > i {
+	color: var(--primary-color);
+	/* border: 2px solid #713bdb; */
 }
 
 .right {
@@ -152,14 +174,19 @@ p {
 .rightHeader {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
 	height: 60px;
 	background-color: #ffffff;
 	padding: 0 15px;
 }
 
+.rightHeader .searchbar {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	width: 300px;
+}
+
 .rightHeader input[type='search'] {
-	position: relative;
 	outline: 0;
 	border: 0;
 	padding: 30px;
@@ -171,18 +198,20 @@ p {
 
 .accountHeader {
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
+	width: 200px;
 }
 
 .accountProfile {
 	display: flex;
 	align-items: center;
-	justify-content: space-evenly;
-	width: 100px;
+	justify-content: flex-end;
+	width: 100%;
 }
 
 #caption h4 {
 	font-size: 10px;
+	width: 50px;
 }
 
 #caption p {
@@ -200,19 +229,22 @@ p {
 
 .accountProfile i {
 	color: #c9ced6;
+	margin-left: 5px;
 }
 
 .others {
 	display: flex;
-	width: 60px;
 	align-items: center;
-	justify-content: space-evenly;
+	justify-content: flex-end;
+	padding-left: var(--mediaPad);
+	width: 40%;
 }
 
 .notifications,
 .logout {
 	width: 15px;
 	height: 15px;
+	margin: 0 5px;
 }
 
 .notifications {
@@ -227,17 +259,21 @@ p {
 	background-size: contain;
 }
 
+.content {
+	padding: var(--padding);
+}
+
 @media (max-width: 640px) {
 	p {
 		font-size: 10px;
 	}
 
-	.logoHeader {
+	#logoHeader {
 		padding: var(--mediaPad);
 		height: 40px;
 	}
 
-	.logoHeader a {
+	#logoHeader a {
 		font-size: 18px;
 		width: 100px;
 	}
@@ -246,17 +282,13 @@ p {
 		content: 'RoyalCo-op';
 	} */
 
-	.logoHeader img {
+	#logo img {
 		height: 25px;
 		margin-right: var(--mediaPad);
 	}
 
 	.links a {
 		font-size: 14px;
-	}
-
-	.links i {
-		height: 20px;
 	}
 
 	.links ul {
@@ -268,24 +300,28 @@ p {
 	}
 
 	.rightHeader {
-		position: relative;
 		height: 40px;
 		padding: 0 10px;
-		width: 100%;
+	}
+
+	.rightHeader .searchbar {
+		width: 180px;
 	}
 
 	.rightHeader input[type='search'] {
-		font-size: 12px;
-		padding: 25px;
+		font-size: 10px;
+		padding: 20px;
+		width: 120px;
 		background-position: center left 5px;
 	}
 
-	.accountProfile {
-		width: 80px;
+	.accountHeader {
+		width: 150px;
 	}
 
 	#caption h4 {
 		font-size: 8px;
+		width: 40px;
 	}
 
 	#caption p {
@@ -296,13 +332,14 @@ p {
 		height: 20px;
 	}
 
-	.others {
-		width: 30px;
-	}
-
 	.notifications,
 	.logout {
 		width: 10px;
 		height: 10px;
+		padding: 0 2px;
+	}
+
+	.content {
+		padding: var(--mediaPad);
 	}
 }

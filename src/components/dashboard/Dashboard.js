@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, {Fragment} from 'react';
 import './Dashboard.css';
 
 const Dashboard = () => {
@@ -11,31 +11,55 @@ const Dashboard = () => {
 
 			<div className="information">
 				<div className="savingsCard">
-					<i className="fa fa-piggy-bank" />
-					<div className="cardBody">
-						<p>Total Savings</p>
-						<h3>&#x20A6;234,000</h3>
+					<div className="top">
+						<i className="fa fa-piggy-bank" />
+						<div className="cardBody">
+							<p>Total Savings</p>
+							<h3>&#x20A6;234,000</h3>
+						</div>
+					</div>
+					<div className="percentage">
+						<i className="stats"></i>
+						<p>5% Down from last week</p>
 					</div>
 				</div>
 				<div className="investCard">
-					<i className="fa fa-rocket" />
-					<div className="cardBody">
-						<p>Total Investments</p>
-						<h3>&#x20A6;56,406</h3>
+					<div className="top">
+						<i className="fa fa-rocket" />
+						<div className="cardBody">
+							<p>Total Investments</p>
+							<h3>&#x20A6;56,406</h3>
+						</div>
+					</div>
+					<div className="percentage">
+						<i className="stats"></i>
+						<p>5% Down from last week</p>
 					</div>
 				</div>
 				<div className="dollarCard">
-					<i className="fa fa-dollar" />
-					<div className="cardBody">
-						<p>Flex Dollar</p>
-						<h3>$1,345</h3>
+					<div className="top">
+						<i className="fa fa-dollar" />
+						<div className="cardBody">
+							<p>Flex Dollar</p>
+							<h3>$1,345</h3>
+						</div>
+					</div>
+					<div className="percentage">
+						<i className="stats"></i>
+						<p>5% Down from last week</p>
 					</div>
 				</div>
 				<div className="nairaCard">
-					<i className="naira">&#x20A6;</i>
-					<div className="cardBody">
-						<p>Flex Naira</p>
-						<h3>&#x20A6;334,543</h3>
+					<div className="top">
+						<i className=" fa naira">&#x20A6;</i>
+						<div className="cardBody">
+							<p>Flex Naira</p>
+							<h3>&#x20A6;334,543</h3>
+						</div>
+					</div>
+					<div className="percentage">
+						<i className="stats"></i>
+						<p>5% Down from last week</p>
 					</div>
 				</div>
 			</div>

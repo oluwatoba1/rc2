@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 
 import Sidebar from './layout/Sidebar';
@@ -17,53 +17,56 @@ import DecemberSavings from './components/savings/DecemberSavings';
 import RequestWithdrawal from './components/savings/RequestWithdrawal';
 import AddSavings from './components/savings/AddSavings';
 
-import user from './img/avatar.png';
+import Header from './layout/Header';
 
 const App = () => {
+	const [showText, setShowText] = useState(false);
+
+	useEffect(() => {
+		if (showText) {
+			document.getElementById('sidebar').style.width = '120px';
+			document.getElementById('logoHeader').style.width = '120px';
+		} else {
+			document.getElementById('sidebar').style.width = '60px';
+			document.getElementById('logoHeader').style.width = '60px';
+		}
+	}, [showText]);
+
+	const expand = () => {
+		setShowText(!showText);
+	};
 	return (
 		<Router>
 			<div className="rc-container">
-				<Sidebar />
+				<Sidebar showText={showText} />
 				<div id="right" className="right">
 					<div className="rightHeader">
-						<input type="search" placeholder="Search" />
-						<div className="accountHeader">
-							<div className="accountProfile">
-								<div id="caption">
-									<h4>John Doe</h4>
-									<p>Member</p>
-								</div>
-								<img src={user} alt="user" />
-								<i className="fa fa-angle-down" />
-							</div>
-							<div className="others">
-								<div className="notifications"></div>
-								<div className="logout"></div>
-							</div>
-						</div>
+						<Header showText={showText} expand={expand} />
 					</div>
-					<Switch>
-						<Route exact path="/" component={Dashboard} />
-						<Route path="/dashboard" component={Dashboard} />
-						<Route path="/savings" component={Savings} />
-						<Route path="/savings/add" component={AddSavings} />
-						<Route path="/savings/request" component={RequestWithdrawal} />
-						<Route
-							path="/savings/december-savings"
-							component={DecemberSavings}
-						/>{' '}
-						<Route path="/savings/send" component={SendMoney} />{' '}
-						<Route
-							path="/savings/view-transactions"
-							component={ViewTransactions}
-						/>{' '}
-						<Route path="/invest" component={Investment} />{' '}
-						<Route path="/account/profile" component={Profile} />{' '}
-						<Route path="/account/contact-info" component={ContactInfo} />{' '}
-						<Route path="/account/financials" component={Financials} />{' '}
-						<Route path="/account/security" component={Security} />{' '}
-						<Route path="/faqs" component={FAQ} />{' '}
-					</Switch>{' '}
+					<div className="content">
+						<Switch>
+							<Route exact path="/" component={Dashboard} />
+							<Route path="/dashboard" component={Dashboard} />
+							<Route path="/savings" component={Savings} />
+							<Route path="/savings/add" component={AddSavings} />
+							<Route path="/savings/request" component={RequestWithdrawal} />
+							<Route
+								path="/savings/december-savings"
+								component={DecemberSavings}
+							/>
+							<Route path="/savings/send" component={SendMoney} />
+							<Route
+								path="/savings/view-transactions"
+								component={ViewTransactions}
+							/>
+							<Route path="/invest" component={Investment} />
+							<Route path="/account/profile" component={Profile} />
+							<Route path="/account/contact-info" component={ContactInfo} />
+							<Route path="/account/financials" component={Financials} />
+							<Route path="/account/security" component={Security} />
+							<Route path="/faqs" component={FAQ} />
+						</Switch>
+					</div>
 				</div>{' '}
 			</div>{' '}
 		</Router>
