@@ -260,10 +260,12 @@ p {
 }
 
 .content {
+	position: relative;
+	width: 100%;
 	padding: var(--padding);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 720px) {
 	p {
 		font-size: 10px;
 	}

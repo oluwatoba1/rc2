@@ -1,106 +1,104 @@
 import React, {Fragment} from 'react';
 import './Savings.css';
-import {BrowserRouter as Router} from 'react-router-dom';
 
 import layer3 from '../../img/Layer 3.png';
 import group from '../../img/Group.png';
 
 const Savings = () => {
 	return (
-		<Router>
-			<Fragment>
-				<h3>Savings</h3>
-				<div className="savingsWrapper">
-					<div className="savings-md-8">
-						<div id="ajo">
-							<div className="createPlan">
-								<img src={layer3} alt="layer3" />
-								<p>Create an Ajo</p>
+		<Fragment>
+			<h3>Savings</h3>
+			<div className="savingsWrapper">
+				<div className="savings-md-8">
+					<div id="ajo">
+						<div className="createPlan">
+							<img src={layer3} alt="layer3" />
+							<p>Create an Ajo</p>
+						</div>
+						<div className="createPlan">
+							<img src={group} alt="group" />
+							<p>Create A Personal Savings Plan</p>
+						</div>
+					</div>
+					<div id="plan">
+						<div id="ongoingPlan">
+							<h3>Ongoing Savings Plan</h3>
+							<div>
+								<div className="sp-header">
+									<p>Society Ajo</p>
+									<div className="sp-images"></div>
+								</div>
+								<div className="sp-details">
+									<p>10,000 monthly contributions</p>
+									<p>Current benefactor: James Ola</p>
+								</div>
+								<div className="ongoing-bar"></div>
 							</div>
-							<div className="createPlan">
-								<img src={group} alt="group" />
-								<p>Create A Personal Savings Plan</p>
+							<div>
+								<div className="sp-header">
+									<p>Society Ajo</p>
+									<div className="sp-images"></div>
+								</div>
+								<div className="sp-details">
+									<p>10,000 monthly contributions</p>
+									<p>Current benefactor: James Ola</p>
+								</div>
+								<div className="ongoing-bar"></div>
+							</div>
+							<div>
+								<div className="sp-header">
+									<p>Personal Savings</p>
+									<div className="sp-images"></div>
+								</div>
+								<div className="sp-details">
+									<p>10,000 monthly contributions</p>
+									<p>Current benefactor: James Ola</p>
+								</div>
+								<div className="ongoing-bar"></div>
 							</div>
 						</div>
-						<div id="plan">
-							<div id="ongoingPlan">
-								<h3>Ongoing Savings Plan</h3>
-								<div>
-									<div className="sp-header">
-										<p>Society Ajo</p>
-										<div className="sp-images"></div>
-									</div>
-									<div className="sp-details">
-										<p>10,000 monthly contributions</p>
-										<p>Current benefactor: James Ola</p>
-									</div>
-									<div className="ongoing-bar"></div>
+						<div id="completedPlan">
+							<h3>Completed Savings Plan</h3>
+							<div>
+								<div className="sp-header">
+									<p>Society Ajo</p>
+									<div className="sp-images"></div>
 								</div>
-								<div>
-									<div className="sp-header">
-										<p>Society Ajo</p>
-										<div className="sp-images"></div>
-									</div>
-									<div className="sp-details">
-										<p>10,000 monthly contributions</p>
-										<p>Current benefactor: James Ola</p>
-									</div>
-									<div className="ongoing-bar"></div>
+								<div className="sp-details">
+									<p>10,000 monthly contributions</p>
+									<p>Current benefactor: James Ola</p>
 								</div>
-								<div>
-									<div className="sp-header">
-										<p>Personal Savings</p>
-										<div className="sp-images"></div>
-									</div>
-									<div className="sp-details">
-										<p>10,000 monthly contributions</p>
-										<p>Current benefactor: James Ola</p>
-									</div>
-									<div className="ongoing-bar"></div>
-								</div>
+								<div className="completed-bar"></div>
 							</div>
-							<div id="completedPlan">
-								<h3>Completed Savings Plan</h3>
-								<div>
-									<div className="sp-header">
-										<p>Society Ajo</p>
-										<div className="sp-images"></div>
-									</div>
-									<div className="sp-details">
-										<p>10,000 monthly contributions</p>
-										<p>Current benefactor: James Ola</p>
-									</div>
-									<div className="completed-bar"></div>
+							<div>
+								<div className="sp-header">
+									<p>Society Ajo</p>
+									<div className="sp-images"></div>
 								</div>
-								<div>
-									<div className="sp-header">
-										<p>Society Ajo</p>
-										<div className="sp-images"></div>
-									</div>
-									<div className="sp-details">
-										<p>10,000 monthly contributions</p>
-										<p>Current benefactor: James Ola</p>
-									</div>
-									<div className="completed-bar"></div>
+								<div className="sp-details">
+									<p>10,000 monthly contributions</p>
+									<p>Current benefactor: James Ola</p>
 								</div>
-								<div>
-									<div className="sp-header">
-										<p>Personal Savings</p>
-										<div className="sp-images"></div>
-									</div>
-									<div className="sp-details">
-										<p>10,000 monthly contributions</p>
-										<p>Current benefactor: James Ola</p>
-									</div>
-									<div className="ongoing-bar"></div>
+								<div className="completed-bar"></div>
+							</div>
+							<div>
+								<div className="sp-header">
+									<p>Personal Savings</p>
+									<div className="sp-images"></div>
 								</div>
+								<div className="sp-details">
+									<p>10,000 monthly contributions</p>
+									<p>Current benefactor: James Ola</p>
+								</div>
+								<div className="ongoing-bar"></div>
 							</div>
 						</div>
 					</div>
-					<div className="savings-md-4">
-						<h3>Savings Invitation</h3>
-					</div>
-					{/* <div className="savingsBody">
+				</div>
+				<div className="savings-md-4">
+					<h3>Savings Invitation</h3>
+				</div>
+				{/* <div className="savingsBody">
 						<NavLink activeClassName="active" to="/savings/add">
 							<i className="" />
 							Add to savings
@@ -138,9 +136,8 @@ const Savings = () => {
 							/>
 						</Switch>
 					</div> */}
-				</div>
-			</Fragment>
-		</Router>
+			</div>
+		</Fragment>
 	);
 };
 

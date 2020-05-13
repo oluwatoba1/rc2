@@ -8,7 +8,7 @@ const Header = ({expand, showText}) => {
 		<div className="header">
 			<div className="searchbar">
 				<i
-					className={showText ? 'fa fa-arrow-right' : 'fa fa-arrow-left'}
+					className={showText ? 'fa fa-arrow-left' : 'fa fa-arrow-right'}
 					onClick={expand}
 				/>
 				<input type="search" placeholder="Search" />
@@ -33,7 +33,7 @@ const Header = ({expand, showText}) => {
 
 Header.propTypes = {
 	expand: PropTypes.func,
-	showText: PropTypes.bool,
+	showText: PropTypes.bool
 };
 
 export default Header;

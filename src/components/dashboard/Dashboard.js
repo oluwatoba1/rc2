@@ -1,5 +1,11 @@
 import React, {Fragment} from 'react';
+import Chart from 'react-google-charts';
+
 import './Dashboard.css';
+import TotalSavings from './TotalSavings';
+import TotalInvestments from './TotalInvestments';
+import DollarCard from './DollarCard';
+import NairaCard from './NairaCard';
 
 const Dashboard = () => {
 	return (
@@ -10,81 +16,54 @@ const Dashboard = () => {
 			</div>
 
 			<div className="information">
-				<div className="savingsCard">
-					<div className="top">
-						<i className="fa fa-piggy-bank" />
-						<div className="cardBody">
-							<p>Total Savings</p>
-							<h3>&#x20A6;234,000</h3>
-						</div>
-					</div>
-					<div className="percentage">
-						<i className="stats"></i>
-						<p>5% Down from last week</p>
-					</div>
-				</div>
-				<div className="investCard">
-					<div className="top">
-						<i className="fa fa-rocket" />
-						<div className="cardBody">
-							<p>Total Investments</p>
-							<h3>&#x20A6;56,406</h3>
-						</div>
-					</div>
-					<div className="percentage">
-						<i className="stats"></i>
-						<p>5% Down from last week</p>
-					</div>
-				</div>
-				<div className="dollarCard">
-					<div className="top">
-						<i className="fa fa-dollar" />
-						<div className="cardBody">
-							<p>Flex Dollar</p>
-							<h3>$1,345</h3>
-						</div>
-					</div>
-					<div className="percentage">
-						<i className="stats"></i>
-						<p>5% Down from last week</p>
-					</div>
-				</div>
-				<div className="nairaCard">
-					<div className="top">
-						<i className=" fa naira">&#x20A6;</i>
-						<div className="cardBody">
-							<p>Flex Naira</p>
-							<h3>&#x20A6;334,543</h3>
-						</div>
-					</div>
-					<div className="percentage">
-						<i className="stats"></i>
-						<p>5% Down from last week</p>
-					</div>
-				</div>
+				<TotalSavings />
+				<TotalInvestments />
+				<DollarCard />
+				<NairaCard />
 			</div>
 
-			<div className="todoWrapper">
-				<div className="todo">
-					<h4>To-Do List</h4>
-					<div className="todoBody">
-						<div>
-							<p>Verify your email address</p>
-						</div>
-						<div>
-							<p>Turn on your Royal co-op Autosave</p>
-						</div>
-						<div>
-							<p>Safelock &#x20A6;50,678 FOR 61 - 90 days</p>
-						</div>
-						<div>
-							<p>Confirm BVN</p>
-						</div>
-						<div>
-							<p>Add Card Details</p>
-						</div>
-					</div>
+			<div className="chartsWrapper">
+				<div className="barChart">
+					<Chart
+						width={'100%'}
+						height={'100%'}
+						chartType="ColumnChart"
+						loader={<div>Loading Chart</div>}
+						data={[
+							['Year', 'From Contributors', 'From Investments'],
+							['Jan', 417500, 400800],
+							['Feb', 379200, 369400],
+							['Mar', 269500, 289600],
+							['Apr', 209900, 195300],
+							['May', 152600, 51700],
+							['Jun', 417500, 400800],
+							['Jul', 79200, 369400],
+							['Aug', 269500, 289600],
+							['Sep', 209900, 95300],
+							['Oct', 152600, 151700],
+							['Nov', 209900, 195300],
+							['Dec', 152600, 151700]
+						]}
+						options={{
+							title: 'Amount of money gotten per month',
+							chartArea: {width: '80%'},
+							colors: ['#6F52ED', '#FF7A00'],
+							bars: 'vertical',
+							bar: {groupWidth: '15%'},
+							legend: {position: 'top'},
+							hAxis: {
+								textStyle: {color: '#c4c4c4'}
+							},
+							vAxis: {
+								textStyle: {color: '#c4c4c4'}
+							}
+						}}
+						// For tests
+						rootProps={{'data-testid': '1'}}
+					/>
 				</div>
+				<div className="topContributors"></div>
+				<div className="pieChart"></div>
 			</div>
 		</Fragment>
 	);
