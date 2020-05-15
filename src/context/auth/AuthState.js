@@ -17,6 +17,8 @@ const AuthState = (props) => {
 
 	const [state, dispatch] = useReducer(authReducer, initialState);
 
+	const proxy = 'https://cors-anywhere.herokuapp.com/';
+
 	//  register user
 	const register = async (formData) => {
 		const config = {
@@ -26,7 +28,7 @@ const AuthState = (props) => {
 		};
 		try {
 			const res = await axios.post(
-				'https://test.devng.host/rapi/register',
+				proxy + 'https://test.devng.host/rapi/register',
 				formData,
 				config
 			);
@@ -35,7 +37,9 @@ const AuthState = (props) => {
 				payload: res.data
 			});
 
-			setAuthToken(localStorage.token);
+			if (localStorage.token) {
+				setAuthToken(localStorage.token);
+			}
 		} catch (error) {
 			dispatch({
 				type: AUTH_FAIL,
@@ -47,16 +51,12 @@ const AuthState = (props) => {
 	const login = async (formData) => {
 		const config = {
 			headers: {
-				// 'Access-Control-Allow-Origin': '*',
-				// 'Access-Control-Allow-Headers':
-				// 	'Content-Type, Authorization, Content-Length, X-Requested-With, Accept',
-				// 'Access-Control-Allow-Credentials': true,
 				'Content-Type': 'application/json'
 			}
 		};
 		try {
 			const res = await axios.post(
-				'https://test.devng.host/rapi/login',
+				proxy + 'https://test.devng.host/rapi/login',
 				formData,
 				config
 			);
@@ -69,7 +69,7 @@ const AuthState = (props) => {
 		} catch (error) {
 			dispatch({
 				type: AUTH_FAIL,
-				payload: error.response.data.message
+				payload: error.data.message
 			});
 		}
 	};

@@ -4,6 +4,10 @@
 	--mediaPad: 10px;
 }
 
+::selection {
+	color: var(--primary-color);
+}
+
 a {
 	display: flex;
 	text-decoration: none;

@@ -4,7 +4,7 @@ export default (state, action) => {
 	const {type, payload} = action;
 	switch (type) {
 		case AUTH_SUCCESS:
-			localStorage.setItem('token', payload.token);
+			localStorage.setItem('token', payload.jwt);
 			return {
 				...state,
 				...payload,
