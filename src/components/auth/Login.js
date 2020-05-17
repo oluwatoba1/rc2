@@ -33,33 +33,44 @@ const Login = (props) => {
 	};
 
 	return (
-		<div className="container">
-			<form onSubmit={onSubmit} id="authCard">
-				<div className="form-group">
-					<label htmlFor="username">Username</label>
-					<input
-						name="username"
-						type="text"
-						value={username}
-						onChange={onChange}
-					/>
-				</div>
-				<div className="form-group">
-					<label htmlFor="password">Password</label>
-					<input
-						name="password"
-						type="password"
-						value={password}
-						onChange={onChange}
-					/>
-				</div>
-				<div className="submitWrapper">
-					<button>Login</button>
-				</div>
-			</form>
-			<p>
-				Don't have an account?<a href="/register">Register</a>
-			</p>
+		<div className="loginContainer">
+			<div className="auth-image"></div>
+			<div className="form">
+				<form onSubmit={onSubmit} id="authCard">
+					<h3>Account Login</h3>
+					<div className="form-group">
+						<label htmlFor="username">Username</label>
+						{/* <i className="fa fa-user"></i> */}
+						<input
+							style={{fontFamily: 'Font Awesome 5 Brands'}}
+							name="username"
+							type="text"
+							placeholder="&#xF002; Username"
+							value={username}
+							onChange={onChange}
+						/>
+					</div>
+					<div className="form-group">
+						<label htmlFor="password">Password</label>
+						{/* <i className="fa fa-key"></i> */}
+						<input
+							name="password"
+							type="password"
+							placeholder="&#xF084; Password"
+							value={password}
+							onChange={onChange}
+						/>
+					</div>
+					<div className="submitWrapper">
+						<button>
+							Login <span className="fa fa-arrow-right"></span>
+						</button>
+					</div>
+				</form>
+				<p>
+					Don't have an account?<a href="/register">Register</a>
+				</p>
+			</div>
 		</div>
 	);
 };

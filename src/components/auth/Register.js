@@ -40,8 +40,9 @@ const Register = (props) => {
 	};
 
 	return (
-		<div className="container">
-			<form onSubmit={onSubmit} id="authCard">
+		<div className="regContainer">
+			<form onSubmit={onSubmit} id="regCard">
+				<h3>Account Register</h3>
 				<div className="form-group">
 					<label htmlFor="fullname">Full Name</label>
 					<input name="fullname" type="text" value="" onChange={onChange} />
