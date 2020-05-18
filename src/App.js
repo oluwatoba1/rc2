@@ -13,24 +13,27 @@ import PrivateRoute from './components/routing/PrivateRoute';
 import Dashboard from './components/dashboard/Dashboard';
 import Savings from './components/savings/Savings';
 import AuthState from './context/auth/AuthState';
+import AlertState from './context/alert/AlertState';
 import Layout from './layout/Layout';
 
 const App = (props) => {
 	return (
 		<AuthState>
-			<Router>
-				<div className="rc-container">
-					<Switch>
-						<Redirect exact from="/" to="/dashboard" />
-						<Route path="/login" component={Login} />
-						<Route path="/register" component={Register} />
-						<Layout>
-							<PrivateRoute path="/dashboard" component={Dashboard} />
-							<PrivateRoute path="/savings" component={Savings} />
-						</Layout>
-					</Switch>
-				</div>
-			</Router>
+			<AlertState>
+				<Router>
+					<div className="rc-container">
+						<Switch>
+							<Redirect exact from="/" to="/dashboard" />
+							<Route path="/login" component={Login} />
+							<Route path="/register" component={Register} />
+							<Layout>
+								<PrivateRoute path="/dashboard" component={Dashboard} />
+								<PrivateRoute path="/savings" component={Savings} />
+							</Layout>
+						</Switch>
+					</div>
+				</Router>
+			</AlertState>
 		</AuthState>
 	);
 };

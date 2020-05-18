@@ -119,6 +119,8 @@
 	display: grid;
 	grid-template-columns: 50% repeat(2, 1fr);
 	column-gap: var(--mediaPad);
+	padding: var(--padding);
+	border-radius: 10px;
 }
 
 .barChart,

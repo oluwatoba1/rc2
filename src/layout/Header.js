@@ -1,9 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import PropTypes from 'prop-types';
 
+import AuthContext from '../context/auth/authContext';
 import user from '../img/avatar.png';
 
 const Header = ({expand, showText}) => {
+	const authContext = useContext(AuthContext);
+	const {logout} = authContext;
+
+	const signOut = () => {
+		logout();
+	};
 	return (
 		<div className="header">
 			<div className="searchbar">
@@ -24,7 +31,7 @@ const Header = ({expand, showText}) => {
 				</div>
 				<div className="others">
 					<div className="notifications"></div>
-					<div className="logout"></div>
+					<div onClick={signOut} className="logout"></div>
 				</div>
 			</div>
 		</div>

@@ -45,31 +45,46 @@ const Register = (props) => {
 				<h3>Account Register</h3>
 				<div className="form-group">
 					<label htmlFor="fullname">Full Name</label>
-					<input name="fullname" type="text" value="" onChange={onChange} />
+					<input
+						name="fullname"
+						type="text"
+						value={fullname}
+						onChange={onChange}
+					/>
 				</div>
 				<div className="form-group">
 					<label htmlFor="email">Email</label>
-					<input name="email" type="text" value="" onChange={onChange} />
+					<input name="email" type="text" value={email} onChange={onChange} />
 				</div>
 				<div className="form-group">
 					<label htmlFor="username">Username</label>
-					<input name="username" type="text" value="" onChange={onChange} />
+					<input
+						name="username"
+						type="text"
+						value={username}
+						onChange={onChange}
+					/>
 				</div>
 				<div className="form-group">
 					<label htmlFor="phone">Phone</label>
-					<input name="phone" type="text" value="" onChange={onChange} />
+					<input name="phone" type="text" value={phone} onChange={onChange} />
 				</div>
 				<div className="form-group">
 					<label htmlFor="password">Password</label>
-					<input name="password" type="password" value="" onChange={onChange} />
+					<input
+						name="password"
+						type="password"
+						value={password}
+						onChange={onChange}
+					/>
 				</div>
 				<div className="submitWrapper">
-					<input type="submit" value="Register" />
+					<button type="submit">Register</button>
 				</div>
+				<p>
+					Already have an account? <a href="/login">Login</a>
+				</p>
 			</form>
-			<p>
-				Already have an account? <a href="/login">Login</a>
-			</p>
 		</div>
 	);
 };

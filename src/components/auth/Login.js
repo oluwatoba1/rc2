@@ -2,20 +2,31 @@ import React, {useState, useEffect, useContext} from 'react';
 
 import './auth.css';
 import AuthContext from '../../context/auth/authContext';
+import AlertContext from '../../context/alert/alertContext';
+import Alerts from '../../layout/Alerts';
 
 const Login = (props) => {
 	const authContext = useContext(AuthContext);
-	const {login, isAuthenticated} = authContext;
+	const alertContext = useContext(AlertContext);
+	const {login, isAuthenticated, error, clearErrors} = authContext;
+	const {setAlert} = alertContext;
 
 	const [user, setUser] = useState({
 		username: '',
 		password: ''
 	});
+	// const [isPressed, setIsPressed] = useState(null);
 	let {username, password} = user;
 
 	useEffect(() => {
 		isAuthenticated && props.history.push('/dashboard');
-	}, [isAuthenticated, props.history]);
+
+		if (error) {
+			setAlert(error);
+			clearErrors();
+		}
+		//	eslint-disable-next-line
+	}, [error, isAuthenticated, props.history]);
 
 	const onChange = (e) => {
 		setUser({
@@ -26,10 +37,21 @@ const Login = (props) => {
 
 	const onSubmit = (e) => {
 		e.preventDefault();
-		login({
-			username,
-			password
-		});
+		let user = username.trim();
+		let pass = password.trim();
+
+		if (username === '' && password === '') {
+			setAlert('Please complete all fields');
+		} else if (username === '') {
+			setAlert(`Please input a username`);
+		} else if (password === '') {
+			setAlert(`Please input a password`);
+		} else if (user && pass) {
+			login({
+				username,
+				password
+			});
+		}
 	};
 
 	return (
@@ -62,14 +84,18 @@ const Login = (props) => {
 						/>
 					</div>
 					<div className="submitWrapper">
-						<button>
-							Login <span className="fa fa-arrow-right"></span>
+						{/* <input type="submit" value="Login" /> */}
+						<button
+							type="submit"
+							onClick={() => setUser({...user, isPressed: true})}>
+							Login <i className="fa fa-arrow-right"></i>
 						</button>
 					</div>
+					<Alerts />
+					<p>
+						Don't have an account?<a href="/register">Register</a>
+					</p>
 				</form>
-				<p>
-					Don't have an account?<a href="/register">Register</a>
-				</p>
 			</div>
 		</div>
 	);
