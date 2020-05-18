@@ -176,6 +176,10 @@
 	.information h3 {
 		font-size: 12px;
 	}
+	.chartsWrapper {
+		grid-template-columns: repeat(1, 1fr);
+		gap: var(--mediaPad);
+	}
 	.todoWrapper {
 		padding: 10px;
 	}
