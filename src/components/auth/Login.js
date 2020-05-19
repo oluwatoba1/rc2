@@ -29,7 +29,7 @@ const Login = ({
 	let { username, password } = user;
 
 	useEffect(() => {
-		isAuthenticated && history.push('/dashboard');
+		isAuthenticated && history.push('/');
 
 		if (error) {
 			setAlert(error);

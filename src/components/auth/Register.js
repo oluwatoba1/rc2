@@ -21,7 +21,7 @@ const Register = ({ history, isAuthenticated, register }) => {
 	let { fullname, email, username, phone, password } = user;
 
 	useEffect(() => {
-		isAuthenticated && history.push('/dashboard');
+		isAuthenticated && history.push('/');
 	}, [isAuthenticated, history]);
 
 	const onChange = e => {
