@@ -24,6 +24,7 @@ const App = () => {
 			<Router>
 				<div className="rc-container">
 					<Switch>
+						<PrivateRoute path="/" component={Dashboard} />
 						<Route path="/login" component={Login} />
 						<Route path="/register" component={Register} />
 						<Layout>
