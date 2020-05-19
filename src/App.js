@@ -20,8 +20,8 @@ import store from './store';
 
 const App = () => {
 	return (
-		<Router>
-			<Provider store={store}>
+		<Provider store={store}>
+			<Router>
 				<div className="rc-container">
 					<Switch>
 						<Route path="/login" component={Login} />
@@ -32,8 +32,8 @@ const App = () => {
 						</Layout>
 					</Switch>
 				</div>
-			</Provider>
-		</Router>
+			</Router>
+		</Provider>
 	);
 };
 
