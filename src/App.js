@@ -5,7 +5,7 @@ import {
 	BrowserRouter as Router,
 	Redirect
 } from 'react-router-dom';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 
 import './App.css';
 import Login from './components/auth/Login';
@@ -24,7 +24,6 @@ const App = () => {
 			<Router>
 				<div className="rc-container">
 					<Switch>
-						<Redirect exact from="/" to="/dashboard" />
 						<Route path="/login" component={Login} />
 						<Route path="/register" component={Register} />
 						<Layout>
