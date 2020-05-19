@@ -1,12 +1,15 @@
-import React, {useContext} from 'react';
-import AlertContext from '../context/alert/alertContext';
+import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-const Alerts = () => {
-	const alertContext = useContext(AlertContext);
-	const {alerts} = alertContext;
+// import AlertContext from '../context/alert/alertContext';
+
+const Alerts = ({ alerts }) => {
+	// const alertContext = useContext(AlertContext);
+	// const { alerts } = alertContext;
 	return (
 		alerts.length > 0 &&
-		alerts.map((alert) => (
+		alerts.map(alert => (
 			<div key={alert.id}>
 				<p className="alert-danger">{alert.msg}</p>
 			</div>
@@ -14,4 +17,12 @@ const Alerts = () => {
 	);
 };
 
-export default Alerts;
+Alerts.propTypes = {
+	alerts: PropTypes.array
+};
+
+const mapStateToProps = state => ({
+	alerts: state.alert
+});
+
+export default connect(mapStateToProps)(Alerts);

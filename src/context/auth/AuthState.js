@@ -3,8 +3,14 @@ import axios from 'axios';
 
 import AuthContext from './authContext';
 import authReducer from './authReducer';
-import {AUTH_SUCCESS, AUTH_FAIL, LOGOUT, CLEAR_ERRORS} from '../types';
+import {
+	AUTH_SUCCESS,
+	AUTH_FAIL,
+	LOGOUT,
+	CLEAR_ERRORS
+} from '../../actions/types';
 import setAuthToken from '../../utils/setAuthToken';
+
 const AuthState = (props) => {
 	const initialState = {
 		token: localStorage.getItem('token'),

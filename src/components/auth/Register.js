@@ -1,11 +1,14 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import './auth.css';
-import AuthContext from '../../context/auth/authContext';
+import { register } from '../../actions/authActions';
+// import AuthContext from '../../context/auth/authContext';
 
-const Register = (props) => {
-	const authContext = useContext(AuthContext);
-	const {register, isAuthenticated} = authContext;
+const Register = ({ history, isAuthenticated, register }) => {
+	// const authContext = useContext(AuthContext);
+	// const {register, isAuthenticated} = authContext;
 
 	const [user, setUser] = useState({
 		fullname: '',
@@ -15,20 +18,20 @@ const Register = (props) => {
 		password: ''
 	});
 
-	let {fullname, email, username, phone, password} = user;
+	let { fullname, email, username, phone, password } = user;
 
 	useEffect(() => {
-		isAuthenticated && props.history.push('/dashboard');
-	}, [isAuthenticated, props.history]);
+		isAuthenticated && history.push('/dashboard');
+	}, [isAuthenticated, history]);
 
-	const onChange = (e) => {
+	const onChange = e => {
 		setUser({
 			...user,
 			[e.target.name]: e.target.value
 		});
 	};
 
-	const onSubmit = (e) => {
+	const onSubmit = e => {
 		e.preventDefault();
 		register({
 			fullname,
@@ -89,4 +92,12 @@ const Register = (props) => {
 	);
 };
 
-export default Register;
+Register.propTypes = {
+	auth: PropTypes.bool.isRequired
+};
+
+const mapStateToProps = state => ({
+	auth: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, { register })(Register);

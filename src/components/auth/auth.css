@@ -63,7 +63,8 @@
 }
 .form-group {
 	display: grid;
-	grid-template-columns: 30% 70%;
+	grid-template-columns: 25% 70%;
+	column-gap: var(--mediaPad);
 	padding: var(--mediaPad);
 	width: 100%;
 }

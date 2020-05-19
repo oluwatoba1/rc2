@@ -1,41 +1,51 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import './auth.css';
-import AuthContext from '../../context/auth/authContext';
-import AlertContext from '../../context/alert/alertContext';
+// import AuthContext from '../../context/auth/authContext';
+// import AlertContext from '../../context/alert/alertContext';
 import Alerts from '../../layout/Alerts';
+import { login, clearErrors } from '../../actions/authActions';
+import { setAlert } from '../../actions/alertActions';
 
-const Login = (props) => {
-	const authContext = useContext(AuthContext);
-	const alertContext = useContext(AlertContext);
-	const {login, isAuthenticated, error, clearErrors} = authContext;
-	const {setAlert} = alertContext;
+const Login = ({
+	auth: { isAuthenticated, error },
+	history,
+	clearErrors,
+	login,
+	setAlert
+}) => {
+	// const authContext = useContext(AuthContext);
+	// const alertContext = useContext(AlertContext);
+	// const { login, isAuthenticated, error, clearErrors } = authContext;
+	// const { setAlert } = alertContext;
 
 	const [user, setUser] = useState({
 		username: '',
 		password: ''
 	});
 	// const [isPressed, setIsPressed] = useState(null);
-	let {username, password} = user;
+	let { username, password } = user;
 
 	useEffect(() => {
-		isAuthenticated && props.history.push('/dashboard');
+		isAuthenticated && history.push('/dashboard');
 
 		if (error) {
 			setAlert(error);
 			clearErrors();
 		}
 		//	eslint-disable-next-line
-	}, [error, isAuthenticated, props.history]);
+	}, [error, isAuthenticated, history]);
 
-	const onChange = (e) => {
+	const onChange = e => {
 		setUser({
 			...user,
 			[e.target.name]: e.target.value
 		});
 	};
 
-	const onSubmit = (e) => {
+	const onSubmit = e => {
 		e.preventDefault();
 		let user = username.trim();
 		let pass = password.trim();
@@ -64,7 +74,7 @@ const Login = (props) => {
 						<label htmlFor="username">Username</label>
 						{/* <i className="fa fa-user"></i> */}
 						<input
-							style={{fontFamily: 'Font Awesome 5 Brands'}}
+							style={{ fontFamily: 'Font Awesome 5 Brands' }}
 							name="username"
 							type="text"
 							placeholder="&#xF002; Username"
@@ -76,6 +86,7 @@ const Login = (props) => {
 						<label htmlFor="password">Password</label>
 						{/* <i className="fa fa-key"></i> */}
 						<input
+							style={{ fontFamily: 'Font Awesome 5 Free', fontWeight: '900' }}
 							name="password"
 							type="password"
 							placeholder="&#xF084; Password"
@@ -85,9 +96,7 @@ const Login = (props) => {
 					</div>
 					<div className="submitWrapper">
 						{/* <input type="submit" value="Login" /> */}
-						<button
-							type="submit"
-							onClick={() => setUser({...user, isPressed: true})}>
+						<button type="submit">
 							Login <i className="fa fa-arrow-right"></i>
 						</button>
 					</div>
@@ -101,4 +110,17 @@ const Login = (props) => {
 	);
 };
 
-export default Login;
+Login.propTypes = {
+	auth: PropTypes.object,
+	clearErrors: PropTypes.func.isRequired,
+	login: PropTypes.func.isRequired,
+	setAlert: PropTypes.func.isRequired
+};
+
+const mapStateToProps = state => ({
+	auth: state.auth
+});
+
+export default connect(mapStateToProps, { clearErrors, login, setAlert })(
+	Login
+);

@@ -1,12 +1,14 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-import AuthContext from '../context/auth/authContext';
+// import AuthContext from '../context/auth/authContext';
 import user from '../img/avatar.png';
+import { logout } from '../actions/authActions';
 
-const Header = ({expand, showText}) => {
-	const authContext = useContext(AuthContext);
-	const {logout} = authContext;
+const Header = ({ expand, showText, logout }) => {
+	// const authContext = useContext(AuthContext);
+	// const {logout} = authContext;
 
 	const signOut = () => {
 		logout();
@@ -40,7 +42,8 @@ const Header = ({expand, showText}) => {
 
 Header.propTypes = {
 	expand: PropTypes.func,
-	showText: PropTypes.bool
+	showText: PropTypes.bool,
+	logout: PropTypes.func
 };
 
-export default Header;
+export default connect(null, { logout })(Header);
