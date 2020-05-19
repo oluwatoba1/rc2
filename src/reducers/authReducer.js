@@ -1,9 +1,4 @@
-import {
-	AUTH_SUCCESS,
-	AUTH_FAIL,
-	LOGOUT,
-	CLEAR_ERRORS
-} from '../actions/types';
+import {AUTH_SUCCESS, AUTH_FAIL, LOGOUT, CLEAR_ERRORS} from '../actions/types';
 
 const initialState = {
 	token: localStorage.getItem('token'),
@@ -14,7 +9,7 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
-	const { type, payload } = action;
+	const {type, payload} = action;
 	switch (type) {
 		case AUTH_SUCCESS:
 			localStorage.setItem('token', payload.jwt);
@@ -23,7 +18,7 @@ export default (state = initialState, action) => {
 				...payload,
 				isAuthenticated: true,
 				loading: false,
-				user: payload.username
+				user: payload.user
 			};
 		case AUTH_FAIL:
 		case LOGOUT:
