@@ -1,8 +1,8 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import rclogo from '../img/rc-copy.png';
 
-const Sidebar = ({showText}) => {
+const Sidebar = ({ showText }) => {
 	// const [showList, setShowList] = useState(false);
 	// const [showBar, setShowBar] = useState(true);
 
@@ -33,7 +33,7 @@ const Sidebar = ({showText}) => {
 			<div id="logoHeader">
 				{/* <i onClick={() => setShowBar(!showBar)} className="fa fa-bars" /> */}
 				<a id="logo" href="/">
-					<img src={rclogo} alt="logo" /> RC
+					<img src={rclogo} alt="logo" />
 				</a>
 			</div>
 

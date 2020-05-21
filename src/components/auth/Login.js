@@ -71,27 +71,28 @@ const Login = ({
 				<form onSubmit={onSubmit} id="authCard">
 					<h3>Account Login</h3>
 					<div className="form-group">
-						<label htmlFor="username">Username</label>
-						{/* <i className="fa fa-user"></i> */}
+						{/* <label htmlFor="username">Username</label> */}
+						<i className="fa fa-user"></i>
 						<input
 							style={{ fontFamily: 'Font Awesome 5 Brands' }}
 							name="username"
 							type="text"
-							placeholder="&#xF002; Username"
+							placeholder="Username"
 							value={username}
 							onChange={onChange}
+							required
 						/>
 					</div>
 					<div className="form-group">
-						<label htmlFor="password">Password</label>
-						{/* <i className="fa fa-key"></i> */}
+						{/* <label htmlFor="password">Password</label> */}
+						<i className="fa fa-key"></i>
 						<input
-							style={{ fontFamily: 'Font Awesome 5 Free', fontWeight: '900' }}
 							name="password"
 							type="password"
-							placeholder="&#xF084; Password"
+							placeholder="Password"
 							value={password}
 							onChange={onChange}
+							required
 						/>
 					</div>
 					<div className="submitWrapper">

@@ -1,5 +1,5 @@
 :root {
-	--primary-color: #0ea851;
+	--primary-color: #04662f;
 	--padding: 20px;
 	--mediaPad: 10px;
 }
@@ -69,7 +69,7 @@ p {
 }
 
 #logo img {
-	height: 40px;
+	height: 35px;
 }
 
 /* .logoHeader a::after {

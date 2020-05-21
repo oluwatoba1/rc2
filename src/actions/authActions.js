@@ -58,7 +58,7 @@ export const login = formData => async dispatch => {
 				payload: res.data.message
 			});
 		}
-
+		// REMOVE LATER!
 		console.log(res.data);
 
 		setAuthToken(localStorage.token);

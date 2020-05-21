@@ -35,8 +35,7 @@
 	padding: var(--padding);
 }
 
-#authCard,
-#regCard {
+#authCard {
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -46,6 +45,7 @@
 	border-radius: 10px;
 	padding: var(--padding);
 	height: 350px;
+	width: 100%;
 }
 
 #regCard {
@@ -56,41 +56,69 @@
 	height: 450px;
 	width: 450px;
 }
-
 #authCard h3,
 #regCard h3 {
 	text-transform: uppercase;
+	text-align: center;
 }
-.form-group {
+
+#authCard p,
+#regCard p {
+	text-align: center;
+}
+
+.form-body {
 	display: grid;
-	grid-template-columns: 25% 70%;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.form-group {
+	position: relative;
+	display: grid;
+	grid-template-columns: 100%;
 	column-gap: var(--mediaPad);
 	padding: var(--mediaPad);
 	width: 100%;
 }
 
+/* #regCard label {
+	display: none;
+} */
+
 .form-group label {
 	font-size: 14px;
 	padding: var(--mediaPad);
+	font-weight: 600;
+}
+
+.form-group:focus-within label {
+	display: block;
 }
 
 .form-group input {
-	padding: var(--mediaPad);
-	height: 40px;
-	border-radius: 20px;
+	padding: 0 var(--padding);
+	height: 30px;
 	border-color: #333;
-	border-width: 1px;
+	color: var(--primary-color);
+	border-width: 0 0 2px;
+	font-size: 16px;
 	outline: 0;
+	width: 100%;
+}
+
+.form-group input:focus {
+	border-color: var(--primary-color);
 }
 
 .form-group i {
 	position: absolute;
-	padding: var(--mediaPad);
-	left: 20px;
+	top: 15px;
+	left: 10px;
+	color: var(--primary-color);
 }
 
 ::placeholder {
-	color: #c4c4c4;
+	color: rgba(51, 51, 51, 0.287);
 	font-weight: lighter;
 }
 
