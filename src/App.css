@@ -119,6 +119,7 @@ p {
 .settings {
 	position: absolute;
 	bottom: 0;
+	padding-left: 10px;
 }
 
 /* #accountList li {
@@ -136,6 +137,7 @@ p {
 	padding: 5px;
 	margin-right: var(--mediaPad);
 	color: #969cba;
+	cursor: pointer;
 }
 
 .links a:hover > i {
@@ -189,6 +191,10 @@ p {
 	align-items: center;
 	justify-content: flex-start;
 	width: 300px;
+}
+
+.searchbar i {
+	cursor: pointer;
 }
 
 .rightHeader input[type='search'] {

@@ -17,9 +17,14 @@ const Header = ({ expand, showText, logout }) => {
 		<div className="header">
 			<div className="searchbar">
 				<i
-					className={showText ? 'fa fa-arrow-left' : 'fa fa-arrow-right'}
-					onClick={expand}
-				/>
+					className={
+						showText
+							? 'fa fa-long-arrow-alt-left'
+							: 'fa fa-long-arrow-alt-right'
+					}
+					onClick={expand}>
+					{showText ? ' hide' : ' expand'}
+				</i>
 				<input type="search" placeholder="Search" />
 			</div>
 			<div className="accountHeader">
