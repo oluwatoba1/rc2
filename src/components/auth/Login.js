@@ -69,7 +69,7 @@ const Login = ({
 			<div className="auth-image"></div>
 			<div className="form">
 				<form onSubmit={onSubmit} id="authCard">
-					<h3>Account Login</h3>
+					<h3>User Login</h3>
 					<div className="form-group">
 						{/* <label htmlFor="username">Username</label> */}
 						<i className="fa fa-user"></i>

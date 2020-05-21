@@ -13,6 +13,8 @@
 	width: 100%;
 	height: 100%;
 	background: url('../../img/savings.jpg') no-repeat;
+	background-size: cover;
+	background-position: center;
 }
 
 .auth-image {
@@ -41,8 +43,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background: #fff;
-	border-radius: 10px;
+
 	padding: var(--padding);
 	height: 350px;
 	width: 100%;
@@ -53,18 +54,39 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	height: 450px;
-	width: 450px;
+	height: 500px;
+	width: 500px;
+	border-radius: 10px;
 }
 #authCard h3,
 #regCard h3 {
 	text-transform: uppercase;
 	text-align: center;
+	color: #333;
 }
 
 #authCard p,
 #regCard p {
+	font-size: 16px;
+	font-weight: 600;
 	text-align: center;
+}
+
+#regCard p {
+	color: #fff;
+}
+
+#authCard p > a,
+#regCard p > a {
+	color: #333;
+	text-decoration: underline;
+	font-weight: 600;
+	transition: 0.6s ease-in-out;
+}
+
+#authCard p > a:hover,
+#regCard p > a:hover {
+	color: var(--primary-color);
 }
 
 .form-body {
@@ -81,25 +103,19 @@
 	width: 100%;
 }
 
-/* #regCard label {
-	display: none;
-} */
-
 .form-group label {
 	font-size: 14px;
 	padding: var(--mediaPad);
 	font-weight: 600;
 }
 
-.form-group:focus-within label {
-	display: block;
-}
-
 .form-group input {
 	padding: 0 var(--padding);
 	height: 30px;
 	border-color: #333;
-	color: var(--primary-color);
+	color: #333;
+	background-color: transparent;
+	font-weight: 600;
 	border-width: 0 0 2px;
 	font-size: 16px;
 	outline: 0;
@@ -110,11 +126,15 @@
 	border-color: var(--primary-color);
 }
 
+.form-group:focus-within i {
+	color: var(--primary-color);
+}
+
 .form-group i {
 	position: absolute;
 	top: 15px;
 	left: 10px;
-	color: var(--primary-color);
+	color: #333;
 }
 
 ::placeholder {
@@ -140,7 +160,7 @@
 
 .submitWrapper button {
 	padding: var(--mediaPad);
-	background-color: var(--primary-color);
+	background-color: #333;
 	border: 0;
 	cursor: pointer;
 	font-size: 14px;

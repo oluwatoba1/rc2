@@ -47,14 +47,13 @@ const Register = ({ history, isAuthenticated, register }) => {
 	return (
 		<div className="regContainer">
 			<form onSubmit={onSubmit} id="regCard">
-				<h3>Account Register</h3>
+				<h3>User Signup</h3>
 				<div className="form-body">
 					<div className="form-group">
 						<label htmlFor="firstname">First Name</label>
 						<input
 							name="firstname"
 							type="text"
-							placeholder="First Name"
 							value={firstname}
 							onChange={onChange}
 						/>
@@ -64,54 +63,39 @@ const Register = ({ history, isAuthenticated, register }) => {
 						<input
 							name="lastname"
 							type="text"
-							placeholder="Last Name"
 							value={lastname}
 							onChange={onChange}
 						/>
 					</div>
 					<div className="form-group">
 						<label htmlFor="email">Email</label>
-						<input
-							name="email"
-							type="text"
-							placeholder="Email"
-							value={email}
-							onChange={onChange}
-						/>
+						<input name="email" type="text" value={email} onChange={onChange} />
 					</div>
 					<div className="form-group">
 						<label htmlFor="username">Username</label>
 						<input
 							name="username"
 							type="text"
-							placeholder="Username"
 							value={username}
 							onChange={onChange}
 						/>
 					</div>
 					<div className="form-group">
 						<label htmlFor="phone">Phone</label>
-						<input
-							name="phone"
-							type="text"
-							placeholder="Phone"
-							value={phone}
-							onChange={onChange}
-						/>
+						<input name="phone" type="text" value={phone} onChange={onChange} />
 					</div>
 					<div className="form-group">
 						<label htmlFor="password">Password</label>
 						<input
 							name="password"
 							type="password"
-							placeholder="Password"
 							value={password}
 							onChange={onChange}
 						/>
 					</div>
 				</div>
 				<div className="submitWrapper">
-					<button type="submit">Register</button>
+					<button type="submit">Sign up</button>
 				</div>
 				<p>
 					Already have an account? <a href="/login">Login</a>
