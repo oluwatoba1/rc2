@@ -183,6 +183,10 @@
 		width: 350px;
 	}
 
+	#regCard p {
+		color: #333;
+	}
+
 	.auth-image {
 		display: none;
 	}
