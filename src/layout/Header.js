@@ -22,9 +22,8 @@ const Header = ({ expand, showText, logout }) => {
 							? 'fa fa-long-arrow-alt-left'
 							: 'fa fa-long-arrow-alt-right'
 					}
-					onClick={expand}>
-					{showText ? ' hide' : ' expand'}
-				</i>
+					onClick={expand}
+				/>
 				<input type="search" placeholder="Search" />
 			</div>
 			<div className="accountHeader">

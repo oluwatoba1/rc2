@@ -22,11 +22,11 @@ const Login = ({
 	// const { setAlert } = alertContext;
 
 	const [user, setUser] = useState({
-		username: '',
+		email: '',
 		password: ''
 	});
 	// const [isPressed, setIsPressed] = useState(null);
-	let { username, password } = user;
+	let { email, password } = user;
 
 	useEffect(() => {
 		isAuthenticated && history.push('/');
@@ -47,18 +47,18 @@ const Login = ({
 
 	const onSubmit = e => {
 		e.preventDefault();
-		let user = username.trim();
+		let mail = email.trim();
 		let pass = password.trim();
 
-		if (username === '' && password === '') {
+		if (mail === '' && password === '') {
 			setAlert('Please complete all fields');
-		} else if (username === '') {
+		} else if (mail === '') {
 			setAlert(`Please input a username`);
 		} else if (password === '') {
 			setAlert(`Please input a password`);
-		} else if (user && pass) {
+		} else if (mail && pass) {
 			login({
-				username,
+				email,
 				password
 			});
 		}
@@ -74,11 +74,10 @@ const Login = ({
 						{/* <label htmlFor="username">Username</label> */}
 						<i className="fa fa-user"></i>
 						<input
-							style={{ fontFamily: 'Font Awesome 5 Brands' }}
-							name="username"
+							name="email"
 							type="text"
-							placeholder="Username"
-							value={username}
+							placeholder="Email"
+							value={email}
 							onChange={onChange}
 							required
 						/>

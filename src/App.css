@@ -248,13 +248,13 @@ p {
 	align-items: center;
 	justify-content: flex-end;
 	padding-left: var(--mediaPad);
-	width: 40%;
+	width: 60%;
 }
 
 .notifications,
 .logout {
-	width: 15px;
-	height: 15px;
+	width: 20px;
+	height: 20px;
 	margin: 0 5px;
 }
 
@@ -352,8 +352,8 @@ p {
 
 	.notifications,
 	.logout {
-		width: 10px;
-		height: 10px;
+		width: 15px;
+		height: 15px;
 		padding: 0 2px;
 	}
 

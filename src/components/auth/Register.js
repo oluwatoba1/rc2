@@ -14,12 +14,11 @@ const Register = ({ history, isAuthenticated, register }) => {
 		firstname: '',
 		lastname: '',
 		email: '',
-		username: '',
 		phone: '',
 		password: ''
 	});
 
-	let { firstname, lastname, email, username, phone, password } = user;
+	let { firstname, lastname, email, phone, password } = user;
 
 	useEffect(() => {
 		isAuthenticated && history.push('/');
@@ -38,7 +37,6 @@ const Register = ({ history, isAuthenticated, register }) => {
 			firstname,
 			lastname,
 			email,
-			username,
 			phone,
 			password
 		});
@@ -70,15 +68,6 @@ const Register = ({ history, isAuthenticated, register }) => {
 					<div className="form-group">
 						<label htmlFor="email">Email</label>
 						<input name="email" type="text" value={email} onChange={onChange} />
-					</div>
-					<div className="form-group">
-						<label htmlFor="username">Username</label>
-						<input
-							name="username"
-							type="text"
-							value={username}
-							onChange={onChange}
-						/>
 					</div>
 					<div className="form-group">
 						<label htmlFor="phone">Phone</label>
