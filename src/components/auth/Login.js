@@ -42,7 +42,7 @@ const Login = ({
 	const onChange = e => {
 		setUser({
 			...user,
-			[e.target.name]: e.target.value
+			[e.target.name]: e.target.value.trim()
 		});
 	};
 

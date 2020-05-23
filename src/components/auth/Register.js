@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 import './auth.css';
 import { register, setLoading } from '../../actions/authActions';
-// import AuthContext from '../../context/auth/authContext';
 
 const Register = ({
 	history,
@@ -12,40 +11,48 @@ const Register = ({
 	register,
 	setLoading
 }) => {
-	// const authContext = useContext(AuthContext);
-	// const {register, isAuthenticated} = authContext;
-
 	const [user, setUser] = useState({
 		firstname: '',
 		lastname: '',
 		email: '',
 		phone: '',
-		password: ''
+		password: '',
+		confirm_password: ''
 	});
 
-	let { firstname, lastname, email, phone, password } = user;
+	let { firstname, lastname, email, phone, password, confirm_password } = user;
 
 	useEffect(() => {
 		isAuthenticated && history.push('/');
-	}, [isAuthenticated, history]);
+
+		if (password === confirm_password) {
+			document.getElementById('confirmPass').style.borderColor = '#157e42';
+			document.getElementById('confirmPass').style.borderWidth = '0 0 4px';
+		} else {
+			document.getElementById('confirmPass').style.borderColor = 'red';
+			document.getElementById('confirmPass').style.borderWidth = '0 0 4px';
+		}
+	}, [password, confirm_password, isAuthenticated, history]);
 
 	const onChange = e => {
 		setUser({
 			...user,
-			[e.target.name]: e.target.value
+			[e.target.name]: e.target.value.trim()
 		});
 	};
 
 	const onSubmit = e => {
 		e.preventDefault();
 		setLoading(true);
-		register({
-			firstname,
-			lastname,
-			email,
-			phone,
-			password
-		});
+		if (password === confirm_password) {
+			register({
+				firstname,
+				lastname,
+				email,
+				phone,
+				password
+			});
+		}
 		setLoading(false);
 	};
 
@@ -61,6 +68,7 @@ const Register = ({
 							type="text"
 							value={firstname}
 							onChange={onChange}
+							required
 						/>
 					</div>
 					<div className="form-group">
@@ -70,15 +78,28 @@ const Register = ({
 							type="text"
 							value={lastname}
 							onChange={onChange}
+							required
 						/>
 					</div>
 					<div className="form-group">
 						<label htmlFor="email">Email</label>
-						<input name="email" type="text" value={email} onChange={onChange} />
+						<input
+							name="email"
+							type="email"
+							value={email}
+							onChange={onChange}
+							required
+						/>
 					</div>
 					<div className="form-group">
 						<label htmlFor="phone">Phone</label>
-						<input name="phone" type="text" value={phone} onChange={onChange} />
+						<input
+							name="phone"
+							type="phone"
+							value={phone}
+							onChange={onChange}
+							required
+						/>
 					</div>
 					<div className="form-group">
 						<label htmlFor="password">Password</label>
@@ -87,13 +108,23 @@ const Register = ({
 							type="password"
 							value={password}
 							onChange={onChange}
+							required
+						/>
+					</div>
+					<div className="form-group">
+						<label htmlFor="confirm_password">Confirm Password</label>
+						<input
+							id="confirmPass"
+							name="confirm_password"
+							type="password"
+							value={confirm_password}
+							onChange={onChange}
+							required
 						/>
 					</div>
 				</div>
 				<div className="submitWrapper">
-					<button type="submit">
-						{loading ? 'Registering...' : 'Sign up'}
-					</button>
+					<button type="submit">{loading ? 'Signing up...' : 'Sign up'}</button>
 				</div>
 				<p>
 					Already have an account? <a href="/login">Login</a>
