@@ -32,7 +32,7 @@ const Layout = ({ logout, children }) => {
 		}, 1000);
 	};
 
-	//	logout after a period of inactivity
+	//	logout after a stipulated period of inactivity
 	if (counter === 10) {
 		// clearInterval(countdown);
 		for (let i in events) {
