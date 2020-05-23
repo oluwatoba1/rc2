@@ -27,7 +27,7 @@ const Layout = ({ logout, children }) => {
 
 	const countUp = () => {
 		//	Start count
-		let countdown = setInterval(() => {
+		setInterval(() => {
 			setCounter(counter => counter + 1);
 		}, 1000);
 	};
