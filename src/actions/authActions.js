@@ -1,6 +1,12 @@
 import axios from 'axios';
 
-import { AUTH_SUCCESS, AUTH_FAIL, LOGOUT, CLEAR_ERRORS } from './types';
+import {
+	AUTH_SUCCESS,
+	AUTH_FAIL,
+	LOGOUT,
+	CLEAR_ERRORS,
+	SET_LOADING
+} from './types';
 import setAuthToken from '../utils/setAuthToken';
 
 //  register user
@@ -79,5 +85,12 @@ export const logout = () => async dispatch => {
 export const clearErrors = () => async dispatch => {
 	dispatch({
 		type: CLEAR_ERRORS
+	});
+};
+
+export const setLoading = value => async dispatch => {
+	dispatch({
+		type: SET_LOADING,
+		payload: value
 	});
 };

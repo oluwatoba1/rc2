@@ -6,15 +6,16 @@ import './auth.css';
 // import AuthContext from '../../context/auth/authContext';
 // import AlertContext from '../../context/alert/alertContext';
 import Alerts from '../../layout/Alerts';
-import { login, clearErrors } from '../../actions/authActions';
+import { login, clearErrors, setLoading } from '../../actions/authActions';
 import { setAlert } from '../../actions/alertActions';
 
 const Login = ({
-	auth: { isAuthenticated, error },
+	auth: { isAuthenticated, error, loading },
 	history,
 	clearErrors,
 	login,
-	setAlert
+	setAlert,
+	setLoading
 }) => {
 	// const authContext = useContext(AuthContext);
 	// const alertContext = useContext(AlertContext);
@@ -22,11 +23,11 @@ const Login = ({
 	// const { setAlert } = alertContext;
 
 	const [user, setUser] = useState({
-		email: '',
+		username: '',
 		password: ''
 	});
 	// const [isPressed, setIsPressed] = useState(null);
-	let { email, password } = user;
+	let { username, password } = user;
 
 	useEffect(() => {
 		isAuthenticated && history.push('/');
@@ -47,21 +48,24 @@ const Login = ({
 
 	const onSubmit = e => {
 		e.preventDefault();
-		let mail = email.trim();
+		setLoading(true);
+
+		let mail = username.trim();
 		let pass = password.trim();
 
 		if (mail === '' && password === '') {
 			setAlert('Please complete all fields');
 		} else if (mail === '') {
-			setAlert(`Please input a username`);
+			setAlert(`Please input an email`);
 		} else if (password === '') {
 			setAlert(`Please input a password`);
 		} else if (mail && pass) {
 			login({
-				email,
+				username,
 				password
 			});
 		}
+		setLoading(false);
 	};
 
 	return (
@@ -74,10 +78,10 @@ const Login = ({
 						{/* <label htmlFor="username">Username</label> */}
 						<i className="fa fa-user"></i>
 						<input
-							name="email"
+							name="username"
 							type="text"
 							placeholder="Email"
-							value={email}
+							value={username}
 							onChange={onChange}
 							required
 						/>
@@ -97,7 +101,8 @@ const Login = ({
 					<div className="submitWrapper">
 						{/* <input type="submit" value="Login" /> */}
 						<button type="submit">
-							Login <i className="fa fa-arrow-right"></i>
+							{loading ? 'Logging in' : 'Login'}{' '}
+							<i className="fa fa-arrow-right" />
 						</button>
 					</div>
 					<Alerts />
@@ -112,15 +117,19 @@ const Login = ({
 
 Login.propTypes = {
 	auth: PropTypes.object,
-	clearErrors: PropTypes.func.isRequired,
-	login: PropTypes.func.isRequired,
-	setAlert: PropTypes.func.isRequired
+	clearErrors: PropTypes.func,
+	login: PropTypes.func,
+	setAlert: PropTypes.func,
+	setLoading: PropTypes.func
 };
 
 const mapStateToProps = state => ({
 	auth: state.auth
 });
 
-export default connect(mapStateToProps, { clearErrors, login, setAlert })(
-	Login
-);
+export default connect(mapStateToProps, {
+	clearErrors,
+	login,
+	setAlert,
+	setLoading
+})(Login);

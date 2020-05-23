@@ -3,10 +3,15 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import './auth.css';
-import { register } from '../../actions/authActions';
+import { register, setLoading } from '../../actions/authActions';
 // import AuthContext from '../../context/auth/authContext';
 
-const Register = ({ history, isAuthenticated, register }) => {
+const Register = ({
+	history,
+	auth: { isAuthenticated, loading },
+	register,
+	setLoading
+}) => {
 	// const authContext = useContext(AuthContext);
 	// const {register, isAuthenticated} = authContext;
 
@@ -33,6 +38,7 @@ const Register = ({ history, isAuthenticated, register }) => {
 
 	const onSubmit = e => {
 		e.preventDefault();
+		setLoading(true);
 		register({
 			firstname,
 			lastname,
@@ -40,6 +46,7 @@ const Register = ({ history, isAuthenticated, register }) => {
 			phone,
 			password
 		});
+		setLoading(false);
 	};
 
 	return (
@@ -84,7 +91,9 @@ const Register = ({ history, isAuthenticated, register }) => {
 					</div>
 				</div>
 				<div className="submitWrapper">
-					<button type="submit">Sign up</button>
+					<button type="submit">
+						{loading ? 'Registering...' : 'Sign up'}
+					</button>
 				</div>
 				<p>
 					Already have an account? <a href="/login">Login</a>
@@ -95,11 +104,13 @@ const Register = ({ history, isAuthenticated, register }) => {
 };
 
 Register.propTypes = {
-	auth: PropTypes.bool.isRequired
+	auth: PropTypes.bool.isRequired,
+	register: PropTypes.func,
+	setLoading: PropTypes.func
 };
 
 const mapStateToProps = state => ({
-	auth: state.auth.isAuthenticated
+	auth: state.auth
 });
 
-export default connect(mapStateToProps, { register })(Register);
+export default connect(mapStateToProps, { register, setLoading })(Register);
