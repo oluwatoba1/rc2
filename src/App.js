@@ -28,11 +28,12 @@ const App = () => {
 				<Router>
 					<div className="rc-container">
 						<Switch>
+							{/* <Redirect from="/" to="/dashboard" /> */}
 							<Route path="/login" component={Login} />
-							<Route path="/register" compoent={Register} />
+							<Route path="/register" component={Register} />
 							<Layout>
 								<Switch>
-									<PrivateRoute path="/" component={Dashboard} />
+									<PrivateRoute path="/dashboard" component={Dashboard} />
 									<PrivateRoute path="/savings" component={Savings} />
 									<PrivateRoute path="/account" component={Account} />
 									<Route component={NotFound} />

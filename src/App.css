@@ -248,7 +248,7 @@ p {
 	align-items: center;
 	justify-content: flex-end;
 	padding-left: var(--mediaPad);
-	width: 10%;
+	width: 30%;
 }
 
 .notifications,
