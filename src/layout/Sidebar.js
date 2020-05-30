@@ -38,7 +38,7 @@ const Sidebar = ({ showText }) => {
 			</div>
 
 			<ul className="links">
-				<NavLink to="/dashboard">
+				<NavLink to="/">
 					<i className="fa fa-home" />
 					{showText ? 'Home' : ''}
 				</NavLink>

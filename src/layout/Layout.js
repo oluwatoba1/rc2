@@ -33,7 +33,7 @@ const Layout = ({ logout, children }) => {
 	};
 
 	//	logout after a stipulated period of inactivity
-	if (counter === 10) {
+	if (counter === 1200) {
 		// clearInterval(countdown);
 		for (let i in events) {
 			window.removeEventListener(events[i], resetTimeout);
@@ -65,7 +65,6 @@ const Layout = ({ logout, children }) => {
 				<div className="rightHeader">
 					<Header showText={showText} expand={expand} />
 				</div>
-				<p>{counter}</p>
 				<div className="content">{children}</div>
 			</div>
 		</Fragment>

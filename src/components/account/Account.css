@@ -1,26 +1,21 @@
 .accountContainer {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 20px;
+	position: relative;
+	width: 100%;
 }
 
-.accountBody {
-	display: grid;
-	grid-template-rows: repeat(4, 1fr);
-	gap: 20px;
+.profileHeader {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
-.accountBody a {
-	font-size: 20px;
-	padding: 20px;
-	color: #000;
-	font-weight: 600;
-	border-radius: 7px 7px 0 0;
+.profileHeader img {
+	height: 50px;
+	cursor: pointer;
 }
 
-.accountBody a.active {
-	background: var(--primary-color);
-}
-
-.accountFormBody {
+@media (max-width: 640px) {
+	.profileHeader img {
+		height: 30px;
+	}
 }

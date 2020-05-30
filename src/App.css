@@ -248,7 +248,7 @@ p {
 	align-items: center;
 	justify-content: flex-end;
 	padding-left: var(--mediaPad);
-	width: 60%;
+	width: 10%;
 }
 
 .notifications,
@@ -348,6 +348,10 @@ p {
 
 	.accountProfile img {
 		height: 20px;
+	}
+
+	.others {
+		width: 20%;
 	}
 
 	.notifications,
