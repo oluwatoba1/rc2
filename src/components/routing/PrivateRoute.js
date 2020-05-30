@@ -12,7 +12,6 @@ const PrivateRoute = ({
 	// const { isAuthenticated, loading } = AuthContext;
 	return (
 		<Route
-			exact
 			{...rest}
 			render={props =>
 				!isAuthenticated && !loading ? (

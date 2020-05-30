@@ -31,12 +31,12 @@ const App = () => {
 							<Route path="/login" component={Login} />
 							<Route path="/register" compoent={Register} />
 							<Layout>
-								{/* <Route path="/" component={Dashboard} /> */}
-								{/* <Redirect exact from="/" to="/dashboard" /> */}
-								<PrivateRoute path="/" component={Dashboard} />
-								<PrivateRoute path="/savings" component={Savings} />
-								<PrivateRoute path="/account" component={Account} />
-								<Route component={NotFound} />
+								<Switch>
+									<PrivateRoute path="/" component={Dashboard} />
+									<PrivateRoute path="/savings" component={Savings} />
+									<PrivateRoute path="/account" component={Account} />
+									<Route component={NotFound} />
+								</Switch>
 							</Layout>
 						</Switch>
 					</div>
