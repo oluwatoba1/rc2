@@ -262,12 +262,15 @@ p {
 	background: url('./img/bell.png');
 	background-repeat: no-repeat;
 	background-size: contain;
+	background-position: center center;
+	cursor: pointer;
 }
 
 .logout {
 	background: url('./img/logout.png');
 	background-repeat: no-repeat;
 	background-size: contain;
+	background-position: center center;
 	cursor: pointer;
 }
 
@@ -350,16 +353,14 @@ p {
 		height: 20px;
 	}
 
-	.others {
+	/* .others {
 		width: 20%;
-	}
+	} */
 
-	.notifications,
+	/* .notifications,
 	.logout {
-		width: 15px;
-		height: 15px;
 		padding: 0 2px;
-	}
+	} */
 
 	.content {
 		padding: var(--mediaPad);
