@@ -106,7 +106,7 @@
 .form-group label {
 	font-size: 14px;
 	padding: var(--mediaPad);
-	font-weight: 600;
+	/* font-weight: 600; */
 }
 
 .form-group input {
@@ -115,8 +115,8 @@
 	border-color: #333;
 	color: #333;
 	background-color: transparent;
-	font-weight: 600;
-	border-width: 0 0 2px;
+	/* font-weight: 600; */
+	border-width: 0 0 1px;
 	font-size: 16px;
 	outline: 0;
 	width: 100%;

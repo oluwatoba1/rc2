@@ -3,19 +3,73 @@
 	width: 100%;
 }
 
-.profileHeader {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+.accountContainer h3 {
+	font-weight: normal;
+	font-size: 16px;
 }
 
-.profileHeader img {
+#updateForm {
+	position: absolute;
+	padding: var(--padding);
+	width: 500px;
+	top: 300px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.profilePic {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.profilePic img {
 	height: 50px;
 	cursor: pointer;
 }
 
+.submit {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.submit button {
+	padding: var(--mediaPad);
+	background-color: #333;
+	border: 0;
+	cursor: pointer;
+	font-size: 14px;
+	color: #fff;
+	width: 40%;
+	box-shadow: 1px 2px 2px #000;
+	text-transform: uppercase;
+	height: 40px;
+	outline: 0;
+	border-radius: 20px;
+	transition: 0.6s ease-in-out;
+}
+
+.submit button:hover {
+	background-color: var(--primary-color);
+}
+
 @media (max-width: 640px) {
+	#updateForm {
+		position: absolute;
+		padding: var(--mediaPad);
+		width: 350px;
+		top: 250px;
+	}
+
 	.profileHeader img {
 		height: 30px;
+	}
+
+	.submit button {
+		font-size: 12px;
 	}
 }

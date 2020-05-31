@@ -28,7 +28,7 @@ const App = () => {
 				<Router>
 					<div className="rc-container">
 						<Switch>
-							{/* <Redirect from="/" to="/dashboard" /> */}
+							<Redirect exact from="/" to="/dashboard" />
 							<Route path="/login" component={Login} />
 							<Route path="/register" component={Register} />
 							<Layout>

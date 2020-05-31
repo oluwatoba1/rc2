@@ -190,7 +190,7 @@ p {
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
-	width: 300px;
+	width: 200px;
 }
 
 .searchbar i {
@@ -309,7 +309,7 @@ p {
 	}
 
 	.links a {
-		font-size: 14px;
+		font-size: 12px;
 	}
 
 	.links ul {
@@ -326,7 +326,7 @@ p {
 	}
 
 	.rightHeader .searchbar {
-		width: 180px;
+		width: 100px;
 	}
 
 	.rightHeader input[type='search'] {
